@@ -3,4 +3,7 @@
     <string name="main_page">Main Page</string>
     <string name="button_info_field">Add New Field</string>
     <string name="button_info_UI">User Info</string>
+    <string name="fieldname">Field Name</string>
+    <string name="userfieldname"></string>
+    <string name="save">SAVE</string>
 </resources>
