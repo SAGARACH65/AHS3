@@ -1,4 +1,6 @@
 <resources>
+   <string name="userinfo">Please Enter Your Information</string>
+    <string name="username">Name</string>
     <string name="ahs">Annual Harvest Suggestor</string>
     <string name="app_name">AHS</string>
     <string name="main_page">Main Page</string>
@@ -8,4 +10,22 @@
     <string name="userfieldname"></string>
     <string name="save">SAVE</string>
     <string name="title_activity_add_new_field">AddNewField</string>
+    <string name="region">Region</string>
+    <string-array name="zones">
+        <item>Mechi</item>
+        <item>Koshi</item>
+        <item>Sagarmatha</item>
+        <item>Janakpur</item>
+        <item>Narayani</item>
+        <item>Bagmati</item>
+        <item>Lumbini</item>
+        <item>Gandaki</item>
+        <item>Dhawalagiri</item>
+        <item>Rapti</item>
+        <item>Karnali</item>
+        <item>Bheri</item>
+        <item>Seti</item>
+        <item>Mahakali</item>
+
+    </string-array>
 </resources>

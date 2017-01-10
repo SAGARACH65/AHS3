@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddNewField"></activity>
+        <activity android:name=".AddNewField" />
+        <activity android:name=".homescreenjava" />
     </application>
 
 </manifest>

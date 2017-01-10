@@ -11,7 +11,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class AgroDatabase extends SQLiteOpenHelper {
          private  static  String DB_NAME="AgroData";
-         private static int DB_VERSION=1;
+    private  static  String TABLE_VARIABLES="variables";
+    private  static  String TABLE_USERINFO="userinfo";
+
+    private static int DB_VERSION=1;
 
     AgroDatabase(Context context)
     {super(context,DB_NAME,null,DB_VERSION);//null is for cursors//sqlite helper classes constructor is being called
@@ -20,7 +23,7 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){//Sqlitedatabase class gives us access to database
-    db.execSQL("CREATE TABLE AGRODATA("
+    db.execSQL("CREATE TABLE "+TABLE_VARIABLES+"("
             +"_id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "Crop_Name TEXT,"
             + "Temp_Max INTEGER,"
@@ -33,8 +36,16 @@ public class AgroDatabase extends SQLiteOpenHelper {
             + "Rain_Min INTEGER,"
             + "Nitrogen_Max INTEGER,"
             + "Nitrogen_Min INTEGER);");
-
         insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77);
+        db.execSQL("CREATE TABLE "+TABLE_USERINFO+"("
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "User_Name TEXT,"
+                + "Location TEXT,"
+                + "CurrentNoFields INTEGER);");
+
+
+
+
     }
     @Override
     public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
