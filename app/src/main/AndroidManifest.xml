@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/crops"
-        android:label=""
+        android:label="@string/ahs"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -15,6 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddNewField"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,5 @@
 <resources>
+    <string name="ahs">Annual Harvest Suggestor</string>
     <string name="app_name">AHS</string>
     <string name="main_page">Main Page</string>
     <string name="button_info_field">Add New Field</string>
@@ -6,4 +7,5 @@
     <string name="fieldname">Field Name</string>
     <string name="userfieldname"></string>
     <string name="save">SAVE</string>
+    <string name="title_activity_add_new_field">AddNewField</string>
 </resources>

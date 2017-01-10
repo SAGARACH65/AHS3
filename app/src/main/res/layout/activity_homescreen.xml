@@ -71,7 +71,7 @@
             android:layout_weight="1"
             android:background="@color/colorPrimary"
             android:tint="#ffff"
-            android:onClick="addNewUser"/>
+            android:onClick="addNewFields"/>
 
         <ImageButton
             android:layout_width="match_parent"
