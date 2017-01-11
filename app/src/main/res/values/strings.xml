@@ -1,5 +1,5 @@
 <resources>
-   <string name="userinfo">Please Enter Your Information</string>
+    <string name="userinfo">Please Enter Your Information</string>
     <string name="username">Name</string>
     <string name="ahs">Annual Harvest Suggestor</string>
     <string name="app_name">AHS</string>
@@ -11,6 +11,9 @@
     <string name="save">SAVE</string>
     <string name="title_activity_add_new_field">AddNewField</string>
     <string name="region">Region</string>
+    <string name="NOF">No Of Fields</string>
+    <string name="Crops_prod">CROPS PLANTED</string>
+    <string name="Area">Area Of Land</string>
     <string-array name="zones">
         <item>Mechi</item>
         <item>Koshi</item>
@@ -27,5 +30,12 @@
         <item>Seti</item>
         <item>Mahakali</item>
 
+    </string-array>
+    <string-array name="landMeasurementFigures">
+        <item>Bigha</item>
+        <item>Khatta</item>
+        <item>Ropani</item>
+        <item>Aana</item>
+        <item>Insignificant</item>
     </string-array>
 </resources>

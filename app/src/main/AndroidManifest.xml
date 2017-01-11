@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".AddNewField" />
         <activity android:name=".homescreenjava" />
+        <activity android:name=".showuserinfo"></activity>
+
     </application>
 
 </manifest>

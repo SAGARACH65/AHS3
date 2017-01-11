@@ -56,14 +56,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textCapWords"
         android:hint="Name"
         android:ems="10"
         android:id="@+id/editText2"
         android:gravity="start|top"
         android:layout_marginTop="65dp"
         android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+
+        android:hapticFeedbackEnabled="true" />
 
     <Button
         android:text="@string/save"

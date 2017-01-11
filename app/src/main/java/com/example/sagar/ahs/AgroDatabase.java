@@ -13,6 +13,7 @@ public class AgroDatabase extends SQLiteOpenHelper {
          private  static  String DB_NAME="AgroData";
     private  static  String TABLE_VARIABLES="variables";
     private  static  String TABLE_USERINFO="userinfo";
+    private static String TABLE_FIELDINFO="fieldinfo";
 
     private static int DB_VERSION=1;
 
@@ -42,8 +43,15 @@ public class AgroDatabase extends SQLiteOpenHelper {
                 + "User_Name TEXT,"
                 + "Location TEXT,"
                 + "CurrentNoFields INTEGER);");
-
-
+        db.execSQL("CREATE TABLE "+TABLE_FIELDINFO+"("
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "FieldName TEXT,"
+                + "Area INTEGER,"
+                + "Measure_Unit TEXT"
+                + "CropGrown  TEXT"
+                +"Growth_Date   INTEGER"
+                +"Growth_Date   INTEGER"
+                +"Growth_Year   INTEGER);");
 
 
     }
@@ -70,7 +78,7 @@ private static void insert_Data(SQLiteDatabase db,String name,int tempmax,int te
     crop_data.put("Rain_Min",rainmin);
     crop_data.put("Nitrogen_Max",nitrogenmax);
     crop_data.put("Nitrogen_Min",nitrogenmin);
-    db.insert("AGRODATA",null,crop_data);
+    db.insert("variables",null,crop_data);
 
 }
 

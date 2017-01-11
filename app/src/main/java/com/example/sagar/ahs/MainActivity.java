@@ -41,21 +41,19 @@ public class MainActivity extends AppCompatActivity{
 
 
             editor.putString("register","true");
-            editor.commit(); }
+            editor.commit();
+        }
            // });
 
     }
     public void click(View view)
     {
 
-        Button buttonX = (Button)findViewById(R.id.button2);
+        //Button buttonX = (Button)findViewById(R.id.button2);
 
 
 
-        /// buttonX.setOnClickListener(new View.OnClickListener() {
-        //  public void onClick(View v)
-        // {
-        //DO SOMETHING! {RUN SOME FUNCTION ... DO CHECKS... ETC}
+
 
         EditText name=(EditText) findViewById(R.id.editText2);
         String value = name.getText().toString();
@@ -75,7 +73,7 @@ public class MainActivity extends AppCompatActivity{
         ContentValues values = new ContentValues();
         values.put("User_Name", value);
         values.put("Location", zonesected);
-
+        values.put("CurrentNoFields",0);
         database.insert("userinfo", null, values);
         database.close();
 

@@ -17,9 +17,18 @@ public class homescreenjava extends AppCompatActivity {
         startActivity(callnew);
 
     }
+    public void showUserInfo(View view){
+
+        Intent callnew =new Intent(this,showuserinfo.class);
+        startActivity(callnew);
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
     }
+
+
+
 }
