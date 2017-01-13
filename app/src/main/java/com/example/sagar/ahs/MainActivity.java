@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity{
         storetodatabase(value,zoneselected);
         Intent callnew =new Intent(this,homescreenjava.class);
         startActivity(callnew);
+
+
+
     }
     private void storetodatabase(String value,String zonesected){
     SQLiteOpenHelper AgroDatabase=new AgroDatabase(this);

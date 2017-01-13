@@ -42,7 +42,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView15"
-            android:layout_weight="0.56"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -55,7 +54,7 @@
             android:labelFor="@+id/editText1" />
 
         <Spinner
-            android:layout_width="84dp"
+            android:layout_width="108dp"
             android:layout_height="match_parent"
             android:id="@+id/spinner2"
             android:entries="@array/landMeasurementFigures"/>

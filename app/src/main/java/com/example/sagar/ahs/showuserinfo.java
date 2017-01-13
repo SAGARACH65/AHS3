@@ -28,15 +28,15 @@ public class showuserinfo extends AppCompatActivity {
                 TextView name =(TextView) findViewById(R.id.textView9);
                 TextView loc =(TextView) findViewById(R.id.textView11);
                 TextView nof=(TextView) findViewById(R.id.textView13);
-                    if(cursor.moveToFirst())
-                    {
-                        String named= cursor.getString(0);
-                        String locd=cursor.getString(1);
-                        String nofd=cursor.getString(2);
-                        name.setText(named);
-                        loc.setText(locd);
-                        nof.setText(nofd);
-                    }
+                if(cursor.moveToFirst())
+                {
+                    String named= cursor.getString(0);
+                    String locd=cursor.getString(1);
+                    String nofd=cursor.getString(2);
+                    name.setText(named);
+                    loc.setText(locd);
+                    nof.setText(nofd);
+                }
                 cursor.close();
                 db.close();
             }catch (Exception e)
