@@ -101,7 +101,7 @@ public class AddNewField extends AppCompatActivity {
         values.put("FieldName", name);
         values.put("Area", area_vlaue);
         values.put("Measure_Unit",type);
-        //values.put("CropGrown",ss);
+        values.put("CropGrown",ss);
         database.insert("fieldinfo", null, values);
         database.close();
 

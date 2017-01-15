@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity{
         storetodatabase(value,zoneselected);
         Intent callnew =new Intent(this,homescreenjava.class);
         startActivity(callnew);
-       // finish();
+        finish();
 
 
     }

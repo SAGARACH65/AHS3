@@ -28,7 +28,7 @@ public class homescreenjava extends AppCompatActivity {
 
         Intent callnew =new Intent(this,showuserinfo.class);
         startActivity(callnew);
-        finish();
+//        finish();
 
     }
     @Override
@@ -39,10 +39,7 @@ public class homescreenjava extends AppCompatActivity {
 
         SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
          db = AgroDatabase.getReadableDatabase();
-        cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit"},null,null,null,null,null);
-        cursor.moveToFirst();
-
-
+        cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit","CropGrown"},null,null,null,null,null);
 
 
         //THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
@@ -62,13 +59,13 @@ public class homescreenjava extends AppCompatActivity {
                 final String name= cursor.getString(1);
                 final String Area=cursor.getString(2);
                 final String M_unit=cursor.getString(3);
-                //final String Crop_grown=cursor.getString(4);
+                final String Crop_grown=cursor.getString(4);
             Bundle extras = new Bundle();
 
                 extras.putString("name",name);
                 extras.putString("Area",Area);
                 extras.putString("Measurement Unit",M_unit);
-              // extras.putString("Crop planted",Crop_grown);
+               extras.putString("Crop planted",Crop_grown);
                intent.putExtras(extras);
                 startActivity(intent);
 

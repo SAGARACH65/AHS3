@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by sagar on 1/9/2017.
- */
 
 public class AgroDatabase extends SQLiteOpenHelper {
          private  static  String DB_NAME="AgroData";
@@ -47,10 +44,10 @@ public class AgroDatabase extends SQLiteOpenHelper {
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "FieldName TEXT,"
                 + "Area TEXT,"
-                + "Measure_Unit TEXT"
-                + "CropGrown  TEXT"
-                +"Growth_Date   INTEGER"
-                +"Growth_Date   INTEGER"
+                + "Measure_Unit TEXT,"
+                + "CropGrown  TEXT,"
+                +"Growth_Date   INTEGER,"
+                +"Growth_Month   INTEGER,"
                 +"Growth_Year   INTEGER);");
 
 
