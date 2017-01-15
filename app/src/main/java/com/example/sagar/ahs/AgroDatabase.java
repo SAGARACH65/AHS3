@@ -46,7 +46,7 @@ public class AgroDatabase extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE "+TABLE_FIELDINFO+"("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "FieldName TEXT,"
-                + "Area INTEGER,"
+                + "Area TEXT,"
                 + "Measure_Unit TEXT"
                 + "CropGrown  TEXT"
                 +"Growth_Date   INTEGER"

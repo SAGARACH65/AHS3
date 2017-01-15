@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity{
 
             editor.putString("register","true");
             editor.commit();
+
         }
            // });
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity{
         storetodatabase(value,zoneselected);
         Intent callnew =new Intent(this,homescreenjava.class);
         startActivity(callnew);
-
+       // finish();
 
 
     }

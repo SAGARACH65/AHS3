@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/leaf"
         android:id="@+id/imageView2"
         android:layout_gravity="end"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
          />
 
     <TextView
@@ -37,7 +37,7 @@
         android:elevation="1dp"
         android:textColor="#aaaf"
         android:textStyle="normal|bold"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
          />
 </LinearLayout>
 

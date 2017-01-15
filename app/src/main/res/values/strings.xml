@@ -20,7 +20,7 @@
     <string name="best_crop">Select Best Crop</string>
     <string name="currentsituaation">Current Progress</string>
     <string name="procedure">Crop Suggestion</string>
-
+    <string name="cropgrown">Crop Grown :</string>
     <string-array name="zones">
         <item>Mechi</item>
         <item>Koshi</item>

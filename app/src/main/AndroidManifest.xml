@@ -24,9 +24,13 @@
         <activity
             android:name=".showuserinfo"
             android:label="@string/user_info" />
-        <activity android:name=".Addition1" />
-        <activity android:name=".Addition2" />
-        <activity android:name=".Addition3"></activity>
+        <activity android:name=".Addition1"
+            android:label="@string/best_crop"/>
+        <activity android:name=".Addition2"
+            android:label="@string/currentsituaation"/>
+        <activity android:name=".Addition3"
+            android:label="@string/procedure"
+            />
     </application>
 
 </manifest>

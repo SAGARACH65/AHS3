@@ -20,52 +20,63 @@
         <TextView
 
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 
             android:id="@+id/textView50"
             android:background="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:layout_weight="1" />
 
         <TextView
 
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
             android:id="@+id/textView51"
             android:background="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:layout_weight="1" />
-
         <TextView
-            android:text="@string/DTH"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView55"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:background="@color/colorPrimary"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:text="@string/cropgrown"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
 
             android:id="@+id/textView52"
             android:background="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:layout_weight="1" />
 
         <TextView
 
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
             android:id="@+id/textView53"
             android:background="@color/colorPrimary"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:layout_weight="1" />
     </LinearLayout>
+
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:weightSum="3"
         >
 
         <ImageButton
@@ -73,35 +84,43 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/hay"
             android:id="@+id/imageButton54"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:onClick="movetofirst"
+            android:layout_weight="1"
+            android:tint="#ffff"/>
 
         <ImageButton
-            android:layout_width="130dp"
+            android:layout_width="118dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/field"
             android:id="@+id/imageButton55"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:onClick="movetosecond"
+            android:layout_weight="1"
+            android:tint="#ffff"/>
 
         <ImageButton
-            android:layout_width="108dp"
+            android:layout_width="111dp"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/videoediting"
             android:id="@+id/imageButton56"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorAccent"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:weightSum="3">
 
         <TextView
             android:text="@string/best_crop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView20"
-            android:layout_weight="1.21"
+            android:layout_weight="1.85"
             android:background="@color/colorPrimary"
             android:textStyle="bold"
             android:gravity="center"/>
@@ -112,9 +131,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView21"
             android:gravity="center"
-            android:layout_weight="1.32"
             android:background="@color/colorPrimary"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_weight="0.78" />
 
         <TextView
             android:text="@string/procedure"
@@ -122,10 +141,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView22"
             android:gravity="center"
-            android:layout_weight="0.70"
-            android:background="@color/colorPrimary"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
             android:textStyle="bold"/>
     </LinearLayout>
+
 
 
 </LinearLayout>

@@ -48,6 +48,8 @@ public class AddNewField extends AppCompatActivity {
 
         storetodatabase(name_of_field,val,area_type);
 
+
+
         //this portion is only to update the no of field portion
 
         SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
@@ -92,12 +94,14 @@ public class AddNewField extends AppCompatActivity {
     }
 
     private void storetodatabase(String name,int area_vlaue,String type){
+        String ss="NA";
         SQLiteOpenHelper AgroDatabase=new AgroDatabase(this);
         SQLiteDatabase database = AgroDatabase.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("FieldName", name);
         values.put("Area", area_vlaue);
         values.put("Measure_Unit",type);
+        //values.put("CropGrown",ss);
         database.insert("fieldinfo", null, values);
         database.close();
 

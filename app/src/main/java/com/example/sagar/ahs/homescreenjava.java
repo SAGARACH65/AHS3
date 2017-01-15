@@ -1,6 +1,6 @@
 package com.example.sagar.ahs;
 
-import android.app.ListActivity;
+
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
-import android.widget.ArrayAdapter;
 import android.widget.SimpleCursorAdapter;
 
 
@@ -23,12 +22,13 @@ public class homescreenjava extends AppCompatActivity {
 
         Intent callnew =new Intent(this,AddNewField.class);
         startActivity(callnew);
-
+        finish();
     }
     public void showUserInfo(View view){
 
         Intent callnew =new Intent(this,showuserinfo.class);
         startActivity(callnew);
+        finish();
 
     }
     @Override
@@ -39,7 +39,13 @@ public class homescreenjava extends AppCompatActivity {
 
         SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
          db = AgroDatabase.getReadableDatabase();
-        cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area"},null,null,null,null,null);
+        cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit"},null,null,null,null,null);
+        cursor.moveToFirst();
+
+
+
+
+        //THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
         CursorAdapter listAdapter= new SimpleCursorAdapter(this,
                                             android.R.layout.simple_list_item_1,
                                             cursor,
@@ -53,7 +59,20 @@ public class homescreenjava extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
                 Intent intent = new Intent(homescreenjava.this, Addition1.class);
+                final String name= cursor.getString(1);
+                final String Area=cursor.getString(2);
+                final String M_unit=cursor.getString(3);
+                //final String Crop_grown=cursor.getString(4);
+            Bundle extras = new Bundle();
+
+                extras.putString("name",name);
+                extras.putString("Area",Area);
+                extras.putString("Measurement Unit",M_unit);
+              // extras.putString("Crop planted",Crop_grown);
+               intent.putExtras(extras);
                 startActivity(intent);
+
+
             }
         });
 
@@ -67,6 +86,9 @@ public class homescreenjava extends AppCompatActivity {
         cursor.close();
         db.close();
     }
+
+
+
 
 
 }
