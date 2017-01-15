@@ -14,6 +14,13 @@
     <string name="NOF">No Of Fields</string>
     <string name="Crops_prod">CROPS PLANTED</string>
     <string name="Area">Area Of Land</string>
+    <string name="user_info">User Info</string>
+    <string name="field_adder">Add New Field</string>
+    <string name="DTH">Days To Harvest</string>
+    <string name="best_crop">Select Best Crop</string>
+    <string name="currentsituaation">Current Progress</string>
+    <string name="procedure">Crop Suggestion</string>
+
     <string-array name="zones">
         <item>Mechi</item>
         <item>Koshi</item>

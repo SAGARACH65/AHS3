@@ -16,7 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity{
-//int values;
+
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     @Override

@@ -15,10 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddNewField" />
-        <activity android:name=".homescreenjava" />
-        <activity android:name=".showuserinfo"></activity>
-
+        <activity
+            android:name=".AddNewField"
+            android:label="@string/field_adder" />
+        <activity
+            android:name=".homescreenjava"
+            android:label="@string/main_page" />
+        <activity
+            android:name=".showuserinfo"
+            android:label="@string/user_info" />
+        <activity android:name=".Addition1" />
+        <activity android:name=".Addition2" />
+        <activity android:name=".Addition3"></activity>
     </application>
 
 </manifest>

@@ -120,8 +120,7 @@
 android:divider="@color/colorPrimary"
         android:dividerHeight="3dp"
         android:id="@+id/list_view"
-
-        />
+/>
 
 
 

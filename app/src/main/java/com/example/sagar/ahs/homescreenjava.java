@@ -8,19 +8,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.SimpleCursorAdapter;
 
-/**
- * Created by sagar on 1/10/2017.
- */
-
-public class homescreenjava extends ListActivity {
-    private ListView m_listview;
 
 
+public class homescreenjava extends AppCompatActivity {
+    private Cursor cursor;
+    private SQLiteDatabase db;
     public void addNewFields(View view) {
 
         Intent callnew =new Intent(this,AddNewField.class);
@@ -37,27 +35,38 @@ public class homescreenjava extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
-        m_listview = (ListView) findViewById(R.id.list_view);
+        ListView m_listview = (ListView) findViewById(R.id.list_view);
 
         SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
-        SQLiteDatabase db = AgroDatabase.getReadableDatabase();
-        Cursor cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area"},null,null,null,null,null);
-        CursorAdapter listAdapter= new SimpleCursorAdapter(this,android.R.layout.simple_list_item_1,cursor,new String[]{"FieldName"},new int[]{android.R.id.text1},0);
+         db = AgroDatabase.getReadableDatabase();
+        cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area"},null,null,null,null,null);
+        CursorAdapter listAdapter= new SimpleCursorAdapter(this,
+                                            android.R.layout.simple_list_item_1,
+                                            cursor,
+                                            new String[]{"FieldName"},
+                                            new int[]{android.R.id.text1},0);
 
         m_listview.setAdapter(listAdapter);
+        m_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+                Intent intent = new Intent(homescreenjava.this, Addition1.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
 
-    //check later why cant be able to close them on ondestroy
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //cursor.close();
-       // db.close();
+        cursor.close();
+        db.close();
     }
 
 
- // public void onListItemC
 }
