@@ -38,6 +38,7 @@ public class Addition1 extends AppCompatActivity {
         intent.putExtras(extras);
         startActivity(intent);
         finish();
+        //sa
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
