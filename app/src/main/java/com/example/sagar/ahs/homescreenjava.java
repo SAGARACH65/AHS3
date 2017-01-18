@@ -44,10 +44,10 @@ public class homescreenjava extends AppCompatActivity {
 
         //THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
         CursorAdapter listAdapter= new SimpleCursorAdapter(this,
-                                            android.R.layout.simple_list_item_1,
+                                            android.R.layout.simple_list_item_2,
                                             cursor,
-                                            new String[]{"FieldName"},
-                                            new int[]{android.R.id.text1},0);
+                                            new String[]{"FieldName","CropGrown"},
+                                            new int[]{android.R.id.text1,android.R.id.text2},0);
 
         m_listview.setAdapter(listAdapter);
         m_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {

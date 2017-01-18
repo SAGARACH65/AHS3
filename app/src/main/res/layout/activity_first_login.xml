@@ -20,7 +20,8 @@
         android:id="@+id/textView4"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:textColor="#ffff"/>
 
     <Spinner
         android:layout_width="match_parent"

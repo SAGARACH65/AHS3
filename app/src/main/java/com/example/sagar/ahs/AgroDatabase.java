@@ -21,20 +21,11 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){//Sqlitedatabase class gives us access to database
-    db.execSQL("CREATE TABLE "+TABLE_VARIABLES+"("
-            +"_id INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + "Crop_Name TEXT,"
-            + "Temp_Max INTEGER,"
-            + "Temp_Min INTEGER,"
-            + "Humidity_Max INTEGER,"
-            + "Humidity_Min INTEGER,"
-            + "PH_Max INTEGER,"
-            + "PH_Min INTEGER,"
-            + "Rain_Max INTEGER,"
-            + "Rain_Min INTEGER,"
-            + "Nitrogen_Max INTEGER,"
-            + "Nitrogen_Min INTEGER);");
+
         insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77);
+
+
+
         db.execSQL("CREATE TABLE "+TABLE_USERINFO+"("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "User_Name TEXT,"

@@ -64,6 +64,5 @@ public class Addition1 extends AppCompatActivity {
         TextView tv4=(TextView) findViewById(R.id.textView19);
         tv4.setText(Crop_grown);
 
-
     }
 }
