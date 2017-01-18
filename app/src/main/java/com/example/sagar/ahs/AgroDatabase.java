@@ -21,8 +21,22 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){//Sqlitedatabase class gives us access to database
-
-        insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77);
+    db.execSQL("CREATE TABLE "+TABLE_VARIABLES+"("
+            +"_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + "Crop_Name TEXT,"
+            + "Temp_Max REAL,"
+            + "Temp_Min REAL,"
+            + "Humidity_Max REAL,"
+            + "Humidity_Min REAL,"
+            + "PH_Max REAL,"
+            + "PH_Min REAL,"
+            + "Rain_Max REAL,"
+            + "Rain_Min REAL,"
+            +"Time_To_Harvest INTEGER,"
+            + "Nitrogen_Max REAL,"
+            + "Nitrogen_Min REAL);");
+        insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77,11);
+        insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77,11);
 
 
 
@@ -51,7 +65,7 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
 
 private static void insert_Data(SQLiteDatabase db,String name,int tempmax,int tempmin,int humiditymax,
-                               int humidity_min,int phmax,int phmin,int rainmax,int rainmin,int nitrogenmax,int nitrogenmin){
+                               int humidity_min,int phmax,int phmin,int rainmax,int rainmin,int D2H,int nitrogenmax,int nitrogenmin){
 
 
     ContentValues crop_data= new ContentValues();
@@ -64,6 +78,7 @@ private static void insert_Data(SQLiteDatabase db,String name,int tempmax,int te
     crop_data.put("PH_Min",phmin);
     crop_data.put("Rain_Max",rainmax);
     crop_data.put("Rain_Min",rainmin);
+    crop_data.put("Time_To_Harvest",D2H);
     crop_data.put("Nitrogen_Max",nitrogenmax);
     crop_data.put("Nitrogen_Min",nitrogenmin);
     db.insert("variables",null,crop_data);

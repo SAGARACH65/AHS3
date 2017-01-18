@@ -22,7 +22,7 @@ public class homescreenjava extends AppCompatActivity {
 
         Intent callnew =new Intent(this,AddNewField.class);
         startActivity(callnew);
-        finish();
+
     }
     public void showUserInfo(View view){
 

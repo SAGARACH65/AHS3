@@ -11,12 +11,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:orientation="vertical"
     android:paddingTop="0dp"
-    tools:context="com.example.sagar.ahs.Addition1">
+    tools:context="com.example.sagar.ahs.Addition1"
+    android:baselineAligned="false">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/linear1">
     <LinearLayout
         android:orientation="horizontal"
@@ -127,7 +128,7 @@
             app:srcCompat="@drawable/field"
             android:id="@+id/imageButton55"
             android:background="@color/colorPrimary"
-            android:onClick="movetosecond"
+            android:onClick="moveToSecond"
             android:layout_weight="1"
             android:tint="#ffff"/>
 
@@ -137,7 +138,7 @@
             app:srcCompat="@drawable/videoediting"
             android:id="@+id/imageButton56"
             android:background="@color/colorPrimary"
-            android:onClick="movetothird"
+            android:onClick="moveToThird"
             android:layout_weight="1"
             android:tint="#ffff"/>
 
@@ -151,10 +152,10 @@
 
         <TextView
             android:text="@string/best_crop"
-            android:layout_width="wrap_content"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView20"
-            android:layout_weight="1.85"
+            android:layout_weight="0.07"
             android:background="@color/colorAccent"
             android:gravity="center"
             android:elevation="5dp" />
@@ -165,7 +166,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView21"
             android:gravity="center"
-            android:layout_weight="0.85"
+            android:layout_weight="2.07"
             android:textColor="#ffff"
             android:background="@color/colorPrimary"
            />
@@ -181,5 +182,271 @@
             android:background="@color/colorPrimary"
             />
     </LinearLayout>
+
+
+
+
+        <TextView
+            android:text="@string/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView24"
+            android:background="@color/colorPrimary"
+            android:textSize="13.5sp"
+            android:textColor="#ffff"
+            android:textStyle="bold"
+            android:paddingTop="2dp"/>
+
+
+
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+   android:paddingTop="4dp"
+    >
+
+
+
+    <TextView
+        android:text="@string/AVGT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView30"
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="1"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:hint="@string/HintTemp"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_column="1"
+        android:layout_row="1"/>
+    <TextView
+        android:text="@string/AVGPH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView31"
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="2"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:hint="@string/HintPH"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:layout_column="1"
+        android:layout_row="2"/>
+    <TextView
+        android:text="@string/AVGS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView32"
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="3"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:hint="@string/HintSunshine"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:layout_column="1"
+        android:layout_row="3"
+        />
+    <TextView
+        android:text="@string/AVGHU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="4"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:hint="@string/HintHumidity"
+        android:ems="10"
+        android:id="@+id/editText6"
+        android:layout_column="1"
+        android:layout_row="4"
+        />
+    <TextView
+        android:text="@string/AVGNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="5"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:hint="@string/Hintnitro"
+        android:ems="10"
+        android:id="@+id/editText7"
+        android:layout_column="1"
+        android:layout_row="5"
+        />
+    <TextView
+        android:text="@string/Rainques"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="6"
+
+        />
+    <CheckBox
+
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox2"
+        android:layout_column="1"
+        android:layout_row="6"
+        android:onClick="onCheckBoxClick"
+        android:buttonTint="@color/colorAccent"/>
+
+    <TextView
+        android:text="@string/AVGR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+android:id="@+id/textbox100"
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="7"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:paddingStart="10dp"
+        android:hint="@string/HintRain"
+        android:ems="10"
+        android:id="@+id/editText8"
+        android:layout_column="1"
+        android:layout_row="7"
+        />
+    <TextView
+        android:text="@string/Croppriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+
+        android:textStyle="bold"
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="0"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner3"
+        android:layout_column="1"
+        android:layout_row="0"
+        android:entries="@array/Crop_names"
+        />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+
+
+        android:paddingTop="2dp"
+        android:layout_column="0"
+        android:layout_row="8"
+        android:textColor="#ffff"
+        android:background="@color/colorPrimaryDark" />
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:textSize="15sp"
+        android:textColor="#ffff"
+
+        android:paddingTop="2dp"
+        android:layout_column="1"
+        android:layout_row="8"
+        android:background="@color/colorPrimaryDark" />
+    <Button
+        android:text="@string/chose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:background="@color/colorPrimary"
+        android:layout_column="0"
+        android:layout_row="9"
+        android:layout_gravity="center"
+        android:onClick="findCrop"/>
+    <Button
+        android:text="@string/sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button6"
+        android:layout_column="1"
+        android:layout_row="9"
+        android:background="@color/colorPrimary"
+        android:onClick="syncDevice"/>
+
+
+
+</GridLayout>
+
+
+
 
 </LinearLayout>

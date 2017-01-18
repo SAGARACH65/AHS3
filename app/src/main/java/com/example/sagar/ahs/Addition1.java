@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class Addition1 extends AppCompatActivity {
@@ -11,7 +13,7 @@ public class Addition1 extends AppCompatActivity {
      private String Area;
     private  String M_unit;
     private String Crop_grown;
-    public void movetosecond(View view)
+    public void moveToSecond(View view)
     {
 
         Intent intent = new Intent(this, Addition2.class);
@@ -25,7 +27,7 @@ public class Addition1 extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    public void movetothird(View view)
+    public void moveToThird(View view)
     {
 
         Intent intent = new Intent(this, Addition3.class);
@@ -38,6 +40,23 @@ public class Addition1 extends AppCompatActivity {
         intent.putExtras(extras);
         startActivity(intent);
         finish();
+
+    }
+    public  void onCheckBoxClick(View view)
+    {
+
+
+
+
+    }
+    public void syncDevice(View view)
+    {
+
+    }
+    public void findCrop(View view)
+    {
+
+
 
     }
     @Override
@@ -64,5 +83,28 @@ public class Addition1 extends AppCompatActivity {
         TextView tv4=(TextView) findViewById(R.id.textView19);
         tv4.setText(Crop_grown);
 
+
+        //for the checkbox partial visibility of rainfall portion
+        final TextView tv6=(TextView) findViewById(R.id.textbox100);
+
+
+        final EditText et1=(EditText) findViewById(R.id.editText8);
+        et1.setVisibility(View.INVISIBLE);
+        tv6.setVisibility(View.INVISIBLE);
+
+        CheckBox cb1=(CheckBox) findViewById(R.id.checkBox2);
+
+        cb1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                tv6.setVisibility(View.VISIBLE);
+                et1.setVisibility(View.VISIBLE);
+            }
+        });
+
+
     }
+
+
 }
