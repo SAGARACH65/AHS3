@@ -56,25 +56,26 @@ public class Algorithm  {
                      float PHMin=cursor.getFloat(7);
                      float Sunshine=cursor.getFloat(9);
 
-                        if(tempentered>tempMin&&tempentered<tempMax)
+                        if(tempentered>=tempMin&&tempentered<=tempMax)
                             counter+=2;
-                     if(humidityentered>humidityMin&&humidityentered<humidityMax)
+                     if(humidityentered>=humidityMin&&humidityentered<=humidityMax)
                          counter++;
-                     if(phentered>PHMin&&phentered<PHMax)
+                     if(phentered>=PHMin&&phentered<=PHMax)
                          counter+=2;
-                     if (sunshineentered>Sunshine)
+                     if (sunshineentered>=Sunshine)
                          counter++;
 
 
 
-                     if(counter>4){
+                     if(counter>=4){
                             topCrops[indextop]=named;
                          indextop++;
                      }
-                    if(counter>3){
+                    if(counter>=3){
                         secondCrops[indexsecond]=named;
                         indexsecond++;
                     }
+                     cursor.moveToNext();
                  }while(!cursor.isAfterLast());
 
 
@@ -127,23 +128,23 @@ public class Algorithm  {
                     float PHMax=cursor.getFloat(6);
                     float PHMin=cursor.getFloat(7);
                     float Sunshine=cursor.getFloat(9);
-                        if(named==priority_crop) {
-                            if (tempentered > tempMin && tempentered < tempMax)
+                        if(named.equals(priority_crop)) {
+                            if (tempentered >= tempMin && tempentered <= tempMax)
                                 counter += 2;
-                            if (humidityentered > humidityMin && humidityentered < humidityMax)
+                            if (humidityentered >= humidityMin && humidityentered <= humidityMax)
                                 counter++;
-                            if (phentered > PHMin && phentered < PHMax)
+                            if (phentered >= PHMin && phentered <= PHMax)
                                 counter += 2;
-                            if (sunshineentered > Sunshine)
+                            if (sunshineentered >= Sunshine)
                                 counter++;
 
                         }
-                    if(counter>3){
+                    if(counter>=3){
                         topCrops[indextop]=named;
                         indextop++;
                     }
 
-
+                    cursor.moveToNext();
                 }while(!cursor.isAfterLast());
 
                     for(int i=0;i<(topCrops.length);i++){
@@ -155,14 +156,14 @@ public class Algorithm  {
 
                     }
 
-                if(topCrops.length!=0){
+                if(var1==1){
                     topCrops[indextop]="TOPACCTOPRIORITY";
                     return topCrops;
 
                 }
 
                 else {
-                    return new String[]{null};
+                    return new String[]{"SelectedNotGood"};
 
                 }
 

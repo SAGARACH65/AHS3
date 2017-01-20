@@ -27,12 +27,12 @@ public class Addition1 extends AppCompatActivity {
     {
 
         Intent intent = new Intent(this, Addition2.class);
-         extras = new Bundle();
+        extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
-         extras.putString("Crop planted",Crop_grown);
+        extras.putString("Crop planted",Crop_grown);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -41,7 +41,7 @@ public class Addition1 extends AppCompatActivity {
     {
 
         Intent intent = new Intent(this, Addition3.class);
-         extras = new Bundle();
+        extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
@@ -57,64 +57,60 @@ public class Addition1 extends AppCompatActivity {
     {
 
     }
-    public void findCrop(View view)
-    {
-            //getting the environmental variable values
-        Spinner prioritycrop=(Spinner) findViewById(R.id.spinner3);
-        String priority_name=String.valueOf(prioritycrop.getSelectedItem());
+    public void findCrop(View view) {
+        //getting the environmental variable values
+        Spinner prioritycrop = (Spinner) findViewById(R.id.spinner3);
+        String priority_name = String.valueOf(prioritycrop.getSelectedItem());
 
-        EditText temp=(EditText) findViewById(R.id.editText3);
-        float tempEntered  =Float.parseFloat( temp.getText().toString() );
-
-
-        EditText ph=(EditText) findViewById(R.id.editText4);
-        float phEntered  =Float.parseFloat( ph.getText().toString() );
-
-        EditText sunshine=(EditText) findViewById(R.id.editText5);
-        float sunshineEntered  =Float.parseFloat( sunshine.getText().toString() );
-
-        EditText humidity=(EditText) findViewById(R.id.editText6);
-        float humidityEntered  =Float.parseFloat( humidity.getText().toString() );
-
-        EditText nitrogen=(EditText) findViewById(R.id.editText7);
-        float nitrogenentered  =Float.parseFloat( nitrogen.getText().toString() );
+        EditText temp = (EditText) findViewById(R.id.editText3);
+        float tempEntered = Float.parseFloat(temp.getText().toString());
 
 
-                //checking if rainfall needs to be selected or not
-        CheckBox cb2=(CheckBox) findViewById(R.id.checkBox2);
-        /*if(cb2.isSelected()){
+        EditText ph = (EditText) findViewById(R.id.editText4);
+        float phEntered = Float.parseFloat(ph.getText().toString());
+
+        EditText sunshine = (EditText) findViewById(R.id.editText5);
+        float sunshineEntered = Float.parseFloat(sunshine.getText().toString());
+
+        EditText humidity = (EditText) findViewById(R.id.editText6);
+        float humidityEntered = Float.parseFloat(humidity.getText().toString());
+
+        EditText nitrogen = (EditText) findViewById(R.id.editText7);
+        float nitrogenentered = Float.parseFloat(nitrogen.getText().toString());
 
 
-            EditText rainfall=(EditText) findViewById(R.id.editText8);
-            float rainfallentered  =Float.parseFloat( rainfall.getText().toString() );
-            String []Crop_Result=al1.findBestCrop(priority_name,tempEntered,phEntered,sunshineEntered,humidityEntered,nitrogenentered);
-            String s1=Crop_Result[0];
-            String s2=Crop_Result[1];
-            TextView tv1=(TextView) findViewById(R.id.textView24);
-            tv1.setText(s1+s2);
-            // unpackandsend(Crop_Result,nitrogenentered);
-        }
+        //checking if rainfall needs to be selected or not
+        CheckBox cb2 = (CheckBox) findViewById(R.id.checkBox2);
+        if (cb2.isSelected()) {
 
-        else{
-  int  c;*/
-           String[] Crop_Result=al1.findBestCrop(priority_name,tempEntered,phEntered,sunshineEntered,humidityEntered,nitrogenentered);
 
-            String s1=Crop_Result[0];
+            EditText rainfall = (EditText) findViewById(R.id.editText8);
+            float rainfallentered = Float.parseFloat(rainfall.getText().toString());
+            String[] Crop_Result = al1.findBestCrop(priority_name, tempEntered, phEntered, sunshineEntered, humidityEntered, nitrogenentered);
+
+            // TextView tv1=(TextView) findViewById(R.id.textView24);
+            //  tv1.setText(s1+s2);
+            unpackandsend(Crop_Result, nitrogenentered);
+        } else {
+
+            String[] Crop_Result = al1.findBestCrop(priority_name, tempEntered, phEntered, sunshineEntered, humidityEntered, nitrogenentered);
+
+            //String s1=Crop_Result[0];
             //String s2=Crop_Result[1];
-            TextView tv1=(TextView) findViewById(R.id.textView24);
-            tv1.setText(s1);
-            //unpackandsend(Crop_Result,nitrogenentered);
+            //TextView tv1=(TextView) findViewById(R.id.textView24);
+            //tv1.setText(s1+s2);
+            unpackandsend(Crop_Result, nitrogenentered);
 
-        //TextView tv1=(TextView) findViewById(R.id.textView24);
-
-
+            //TextView tv1=(TextView) findViewById(R.id.textView24);
 
 
-
-
+        }
     }
+
+
     public void unpackandsend(String []Crop_Result,float nitrogen_entered){
-        String nitromessage;
+        String nitromessage=null;
+        String joiner=null;
         byte checker=0;
         int k;
         if(nitrogen_entered<30){
@@ -122,35 +118,64 @@ public class Addition1 extends AppCompatActivity {
             nitromessage="Nitrogen Content is Low. You might want to plant Legumonistic Crops";
         }
         else if(nitrogen_entered>100){
-            nitromessage="Too much Nitrogen in Soil. You can plant Corn ";
+            nitromessage="Too much Nitrogen in Soil. You can plant Corn to minimize it";
 
         }
 
 
-        /*for(int i=0;i<(Crop_Result.length);i++){
+        for(int i=0;i<(Crop_Result.length);i++){
             TextView tv1=(TextView) findViewById(R.id.textView16);
             tv1.setText(Crop_Result[0]);
 
-           if(Crop_Result[i]=="TOP"){
+           if((Crop_Result[i]).equals("TOP")){
                         k=(i-1);
                  for( i=0;i<=(k);i++){
-                     extras.putString("name",Crop_Result[i] );
+                     joiner=joiner+" "+Crop_Result[i];
                  }
+               Intent intent = new Intent(this, ConfirmCrop.class);
+               extras.putString("Message","TOP");
+               extras.putString("crops",joiner );
+               intent.putExtras(extras);
+               startActivity(intent);
             }
-            else if(Crop_Result[i]=="SECOND"){
-                k=i;
-                for( i=0;i<=(k);i++){
+            else if(Crop_Result[i].equals("SECOND")){
+                k=i-1;
+               for( i=0;i<=(k);i++){
+                   joiner=joiner+" "+Crop_Result[i];
+               }
+               Intent intent = new Intent(this, ConfirmCrop.class);
+               extras.putString("Message","SECOND");
+               extras.putString("crops",joiner );
+               intent.putExtras(extras);
+               startActivity(intent);
 
-                }
             }
-            else if(Crop_Result[i]=="TOPACCTOPRIORITY"){
-                k=i;
-                for( i=0;i<=(k);i++){
+            else if(Crop_Result[i].equals("TOPACCTOPRIORITY")){
+                k=i-1;
+               for( i=0;i<=(k);i++){
+                   joiner=joiner+" "+Crop_Result[i];
+               }
+               Intent intent = new Intent(this, ConfirmCrop.class);
+               extras.putString("Message","TOPACCTOPRIORITY");
+               extras.putString("crops",joiner );
+               intent.putExtras(extras);
+               startActivity(intent);
+           }
+            else if(Crop_Result[i].equals("SelectedNotGood")){
+               k=i-1;
+               for( i=0;i<=(k);i++){
+                   joiner=joiner+" "+Crop_Result[i];
+               }
+               Intent intent = new Intent(this, ConfirmCrop.class);
+               extras.putString("Message","NONE");
+               extras.putString("crops",joiner );
+               intent.putExtras(extras);
+               startActivity(intent);
 
-                }
+           }
+
             }
-
-            }*/
+          //code if no item
 
 
 
