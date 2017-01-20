@@ -7,7 +7,8 @@
         android:icon="@drawable/crops"
         android:label="@string/ahs"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,6 +19,8 @@
         <activity
             android:name=".AddNewField"
             android:label="@string/field_adder" />
+        <activity android:name="com.example.sagar.ahs.AndroidDatabaseManager"
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name=".homescreenjava"
             android:label="@string/main_page" />

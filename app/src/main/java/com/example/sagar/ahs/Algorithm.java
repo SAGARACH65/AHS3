@@ -6,12 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-import java.util.Arrays;
-import java.util.Objects;
-
-import static android.content.ContentValues.TAG;
 
 public class Algorithm  {
 
@@ -40,10 +35,13 @@ public class Algorithm  {
         Cursor cursor = db.query("variables",
                 new String[]{"_id", "Crop_Name", "Temp_Max", "Temp_Min",
                         "Humidity_Max", "Humidity_Min", "PH_Max", "PH_Min", "Time_To_Harvest", "Sunshine_Days"},
-                "_id=?",
+                null,
                 null, null, null, null
         );
-        if(priority_crop=="None") {
+
+
+
+        if("None".equals(priority_crop)) {
 
              if(cursor.moveToFirst()) {
 
@@ -67,7 +65,8 @@ public class Algorithm  {
                      if (sunshineentered>Sunshine)
                          counter++;
 
-                     Log.d(TAG, "counter: "+counter);
+
+
                      if(counter>4){
                             topCrops[indextop]=named;
                          indextop++;

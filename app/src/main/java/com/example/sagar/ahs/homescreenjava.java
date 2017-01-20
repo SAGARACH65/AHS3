@@ -17,7 +17,7 @@ import android.widget.SimpleCursorAdapter;
 
 public class homescreenjava extends AppCompatActivity {
     private Cursor cursor;
-    private SQLiteDatabase db;
+    public SQLiteDatabase dbaa;
     public void addNewFields(View view) {
 
         Intent callnew =new Intent(this,AddNewField.class);
@@ -38,8 +38,8 @@ public class homescreenjava extends AppCompatActivity {
         ListView m_listview = (ListView) findViewById(R.id.list_view);
 
         SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
-         db = AgroDatabase.getReadableDatabase();
-        cursor=db.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit","CropGrown"},null,null,null,null,null);
+         dbaa = AgroDatabase.getReadableDatabase();
+        cursor=dbaa.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit","CropGrown"},null,null,null,null,null);
 
 
         //THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
@@ -81,7 +81,7 @@ public class homescreenjava extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         cursor.close();
-        db.close();
+        //dbaa.close();
     }
 
 

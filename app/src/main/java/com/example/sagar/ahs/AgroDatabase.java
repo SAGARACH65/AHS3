@@ -2,8 +2,14 @@ package com.example.sagar.ahs;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 
 public class AgroDatabase extends SQLiteOpenHelper {
@@ -21,7 +27,8 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){//Sqlitedatabase class gives us access to database
-    db.execSQL("CREATE TABLE "+TABLE_VARIABLES+"("
+
+        db.execSQL("CREATE TABLE "+TABLE_VARIABLES+"("
             +"_id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "Crop_Name TEXT,"
             + "Temp_Max REAL,"
@@ -35,18 +42,23 @@ public class AgroDatabase extends SQLiteOpenHelper {
             +"Time_To_Harvest INTEGER,"
 
             + "Sunshine_Days INTEGER);");
-        insert_Data(db,"Rice",35,20,80,60,(float)6.5,(float)5.0,1400,150,6);
-        insert_Data(db,"Wheat",12,30,60,50,(float)3.7,7,310,120,6);
-        insert_Data(db,"Soybean",27,15,60,50,6,(float)6.8,60,100,6);
-        insert_Data(db,"Strawberries",27,15,60,50,7,(float)3.7,310,120,6);
-        insert_Data(db,"Peas",(float)24.1,(float)15.5,40,60,6,(float)7.5,0,70,6);
-        insert_Data(db,"Potatoes",30,10,80,50,6,(float)4.5,0,110,6);
-        insert_Data(db,"Pumpkin",32,21,60,40,7,(float)5.5,600,100,6);
-        insert_Data(db,"Onions",35,21,60,40,7,6,0,100,6);
-        insert_Data(db,"Corn",24,15,60,40,7,(float)5.5,0,75,6);
-        insert_Data(db,"LimaBeans",24,18,60,40,7,6,0,80,6);
+      /*  db.execSQL("CREATE TABLE "+TABLE_VARIABLES+"("
+                +"_id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "Crop_Name TEXT,"
+                + "Temp_Max INTEGER,"
+                + "Temp_Min INTEGER,"
+                + "Humidity_Max INTEGER,"
+                + "Humidity_Min INTEGER,"
+                + "PH_Max INTEGER,"
+                + "PH_Min INTEGER,"
+                + "Rain INTEGER,"
+
+                +"Time_To_Harvest INTEGER,"
+
+                + "Sunshine_Days INTEGER);");
 
 
+*/
         db.execSQL("CREATE TABLE "+TABLE_USERINFO+"("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "User_Name TEXT,"
@@ -61,6 +73,29 @@ public class AgroDatabase extends SQLiteOpenHelper {
                 +"Growth_Date   INTEGER,"
                 +"Growth_Month   INTEGER,"
                 +"Growth_Year   INTEGER);");
+        /*insert_Data(db,"Rice",35,20,80,60,(float)6.5,(float)5.0,1400,150,6);
+        insert_Data(db,"Wheat",12,30,60,50,(float)3.7,7,310,120,6);
+        insert_Data(db,"Soybean",27,15,60,50,6,(float)6.8,60,100,6);
+        insert_Data(db,"Strawberries",27,15,60,50,7,(float)3.7,310,120,6);
+        insert_Data(db,"Peas",(float)24.1,(float)15.5,40,60,6,(float)7.5,0,70,6);
+        insert_Data(db,"Potatoes",30,10,80,50,6,(float)4.5,0,110,6);
+        insert_Data(db,"Pumpkin",32,21,60,40,7,(float)5.5,600,100,6);
+        insert_Data(db,"Onions",35,21,60,40,7,6,0,100,6);
+        insert_Data(db,"Corn",24,15,60,40,7,(float)5.5,0,75,6);
+        insert_Data(db,"LimaBeans",24,18,60,40,7,6,0,80,6);
+       */
+        insert_Data(db,"Rice",35,20,80,60,6,5,1400,150,6);
+        insert_Data(db,"Wheat",12,30,60,50,4,7,310,120,6);
+        insert_Data(db,"Soybean",27,15,60,50,6,7,60,100,6);
+        insert_Data(db,"Strawberries",27,15,60,50,7,4,310,120,6);
+        insert_Data(db,"Peas",24,15,40,60,6,8,0,70,6);
+        insert_Data(db,"Potatoes",30,10,80,50,6,4,0,110,6);
+        insert_Data(db,"Pumpkin",32,21,60,40,7,5,600,100,6);
+        insert_Data(db,"Onions",35,21,60,40,7,6,0,100,6);
+        insert_Data(db,"Corn",24,15,60,40,7,5,0,75,6);
+        insert_Data(db,"LimaBeans",24,18,60,40,7,6,0,80,6);
+
+
 
 
     }
@@ -69,36 +104,99 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
 
     }
+/*
+   private void insert_Data(SQLiteDatabase db,String name,float tempmax,float tempmin,float humiditymax,
+                             float humidity_min,float phmax,float phmin,float rainmax,
+                             int T2H,int Sunshine){
+
+       ContentValues crop_data= new ContentValues();
+        crop_data.put("Crop_Name",name);
+        crop_data.put("Temp_Max",tempmax);
+        crop_data.put("Temp_Min",tempmin);
+        crop_data.put("Humidity_Max",humiditymax);
+        crop_data.put("Humidity_Min",humidity_min);
+        crop_data.put("PH_Max",phmax);
+        crop_data.put("PH_Min",phmin);
+        crop_data.put("Rain",rainmax);
+
+        crop_data.put("Time_To_Harvest",T2H);
+        crop_data.put("Sunshine)Days",Sunshine);
+        db.insert("variables",null,crop_data);
+ //       database.close();
+    }
+*/
+   private static void insert_Data(SQLiteDatabase db,String name,int tempmax,int tempmin,int humiditymax,
+                            int humidity_min,int phmax,int phmin,int rainmax,
+                            int T2H,int Sunshine){
 
 
-private static void insert_Data(SQLiteDatabase db,String name,float tempmax,float tempmin,float humiditymax,
-                               float humidity_min,float phmax,float phmin,float rainmax,
-                                int T2H,int Sunshine){
+       ContentValues crop_data= new ContentValues();
+       crop_data.put("Crop_Name",name);
+       crop_data.put("Temp_Max",tempmax);
+       crop_data.put("Temp_Min",tempmin);
+       crop_data.put("Humidity_Max",humiditymax);
+       crop_data.put("Humidity_Min",humidity_min);
+       crop_data.put("PH_Max",phmax);
+       crop_data.put("PH_Min",phmin);
+       crop_data.put("Rain",rainmax);
 
-
-
-    ContentValues crop_data= new ContentValues();
-    crop_data.put("Crop_Name",name);
-    crop_data.put("Temp_Max",tempmax);
-    crop_data.put("Temp_Min",tempmin);
-    crop_data.put("Humidity_Max",humiditymax);
-    crop_data.put("Humidity_Min",humidity_min);
-    crop_data.put("PH_Max",phmax);
-    crop_data.put("PH_Min",phmin);
-    crop_data.put("Rain",rainmax);
-
-    crop_data.put("Time_To_Harvest",T2H);
-    crop_data.put("Sunshine)Days",Sunshine);
-    //crop_data.put("Nitrogen_Max",N2max);
-    //crop_data.put("Nitrogen_Min",N2min);
-               db.insert("variables",null,crop_data);
-
-}
+       crop_data.put("Time_To_Harvest",T2H);
+       crop_data.put("Sunshine_Days",Sunshine);
+       db.insert("variables",null,crop_data);
+      // db.close();
+   }
 
 
 
 
 
+    public ArrayList<Cursor> getData(String Query){
+        //get writable database
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        String[] columns = new String[] { "mesage" };
+        //an array list of cursor to save two cursors one has results from the query
+        //other cursor stores error message if any errors are triggered
+        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
+        MatrixCursor Cursor2= new MatrixCursor(columns);
+        alc.add(null);
+        alc.add(null);
 
 
+        try{
+            String maxQuery = Query ;
+            //execute the query results will be save in Cursor c
+            Cursor c = sqlDB.rawQuery(maxQuery, null);
+
+
+            //add value to cursor2
+            Cursor2.addRow(new Object[] { "Success" });
+
+            alc.set(1,Cursor2);
+            if (null != c && c.getCount() > 0) {
+
+
+                alc.set(0,c);
+                c.moveToFirst();
+
+                return alc ;
+            }
+            return alc;
+        } catch(SQLException sqlEx){
+            Log.d("printing exception", sqlEx.getMessage());
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[] { ""+sqlEx.getMessage() });
+            alc.set(1,Cursor2);
+            return alc;
+        } catch(Exception ex){
+
+            Log.d("printing exception", ex.getMessage());
+
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[] { ""+ex.getMessage() });
+            alc.set(1,Cursor2);
+            return alc;
+        }
+
+
+    }
 }

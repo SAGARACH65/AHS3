@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -78,10 +79,10 @@ public class Addition1 extends AppCompatActivity {
         EditText nitrogen=(EditText) findViewById(R.id.editText7);
         float nitrogenentered  =Float.parseFloat( nitrogen.getText().toString() );
 
-        Log.d(TAG, "counter: "+nitrogenentered);
+
                 //checking if rainfall needs to be selected or not
         CheckBox cb2=(CheckBox) findViewById(R.id.checkBox2);
-        if(cb2.isSelected()){
+        /*if(cb2.isSelected()){
 
 
             EditText rainfall=(EditText) findViewById(R.id.editText8);
@@ -95,7 +96,7 @@ public class Addition1 extends AppCompatActivity {
         }
 
         else{
-
+  int  c;*/
            String[] Crop_Result=al1.findBestCrop(priority_name,tempEntered,phEntered,sunshineEntered,humidityEntered,nitrogenentered);
 
             String s1=Crop_Result[0];
@@ -103,8 +104,8 @@ public class Addition1 extends AppCompatActivity {
             TextView tv1=(TextView) findViewById(R.id.textView24);
             tv1.setText(s1);
             //unpackandsend(Crop_Result,nitrogenentered);
-        }
-        TextView tv1=(TextView) findViewById(R.id.textView24);
+
+        //TextView tv1=(TextView) findViewById(R.id.textView24);
 
 
 
@@ -194,6 +195,16 @@ public class Addition1 extends AppCompatActivity {
 
         CheckBox cb1=(CheckBox) findViewById(R.id.checkBox2);
 
+
+        Button button =(Button)findViewById(R.id.button6);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent dbmanager = new Intent(getApplicationContext(),AndroidDatabaseManager.class);
+                startActivity(dbmanager);
+            }
+        });
         cb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

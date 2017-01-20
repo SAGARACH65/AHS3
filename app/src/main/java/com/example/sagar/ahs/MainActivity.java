@@ -65,6 +65,8 @@ public class MainActivity extends AppCompatActivity{
 
 
         storetodatabase(value,zoneselected);
+
+
         Intent callnew =new Intent(this,homescreenjava.class);
         startActivity(callnew);
         finish();
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity{
         values.put("Location", zonesected);
         values.put("CurrentNoFields",0);
         database.insert("userinfo", null, values);
-        database.close();
+       //database.close();
 
 
 
