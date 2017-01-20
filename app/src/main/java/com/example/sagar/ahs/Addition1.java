@@ -3,21 +3,30 @@ package com.example.sagar.ahs;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import static android.content.ContentValues.TAG;
+import static java.lang.Integer.parseInt;
+
 public class Addition1 extends AppCompatActivity {
+
+    private boolean check=true;
      private String name;
      private String Area;
     private  String M_unit;
     private String Crop_grown;
+    private Bundle extras;
+    Algorithm al1= new Algorithm(Addition1.this);
     public void moveToSecond(View view)
     {
 
         Intent intent = new Intent(this, Addition2.class);
-        Bundle extras = new Bundle();
+         extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
@@ -31,7 +40,7 @@ public class Addition1 extends AppCompatActivity {
     {
 
         Intent intent = new Intent(this, Addition3.class);
-        Bundle extras = new Bundle();
+         extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
@@ -42,23 +51,114 @@ public class Addition1 extends AppCompatActivity {
         finish();
 
     }
-    public  void onCheckBoxClick(View view)
-    {
 
-
-
-
-    }
     public void syncDevice(View view)
     {
 
     }
     public void findCrop(View view)
     {
+            //getting the environmental variable values
+        Spinner prioritycrop=(Spinner) findViewById(R.id.spinner3);
+        String priority_name=String.valueOf(prioritycrop.getSelectedItem());
+
+        EditText temp=(EditText) findViewById(R.id.editText3);
+        float tempEntered  =Float.parseFloat( temp.getText().toString() );
+
+
+        EditText ph=(EditText) findViewById(R.id.editText4);
+        float phEntered  =Float.parseFloat( ph.getText().toString() );
+
+        EditText sunshine=(EditText) findViewById(R.id.editText5);
+        float sunshineEntered  =Float.parseFloat( sunshine.getText().toString() );
+
+        EditText humidity=(EditText) findViewById(R.id.editText6);
+        float humidityEntered  =Float.parseFloat( humidity.getText().toString() );
+
+        EditText nitrogen=(EditText) findViewById(R.id.editText7);
+        float nitrogenentered  =Float.parseFloat( nitrogen.getText().toString() );
+
+        Log.d(TAG, "counter: "+nitrogenentered);
+                //checking if rainfall needs to be selected or not
+        CheckBox cb2=(CheckBox) findViewById(R.id.checkBox2);
+        if(cb2.isSelected()){
+
+
+            EditText rainfall=(EditText) findViewById(R.id.editText8);
+            float rainfallentered  =Float.parseFloat( rainfall.getText().toString() );
+            String []Crop_Result=al1.findBestCrop(priority_name,tempEntered,phEntered,sunshineEntered,humidityEntered,nitrogenentered);
+            String s1=Crop_Result[0];
+            String s2=Crop_Result[1];
+            TextView tv1=(TextView) findViewById(R.id.textView24);
+            tv1.setText(s1+s2);
+            // unpackandsend(Crop_Result,nitrogenentered);
+        }
+
+        else{
+
+           String[] Crop_Result=al1.findBestCrop(priority_name,tempEntered,phEntered,sunshineEntered,humidityEntered,nitrogenentered);
+
+            String s1=Crop_Result[0];
+            //String s2=Crop_Result[1];
+            TextView tv1=(TextView) findViewById(R.id.textView24);
+            tv1.setText(s1);
+            //unpackandsend(Crop_Result,nitrogenentered);
+        }
+        TextView tv1=(TextView) findViewById(R.id.textView24);
+
+
+
 
 
 
     }
+    public void unpackandsend(String []Crop_Result,float nitrogen_entered){
+        String nitromessage;
+        byte checker=0;
+        int k;
+        if(nitrogen_entered<30){
+
+            nitromessage="Nitrogen Content is Low. You might want to plant Legumonistic Crops";
+        }
+        else if(nitrogen_entered>100){
+            nitromessage="Too much Nitrogen in Soil. You can plant Corn ";
+
+        }
+
+
+        /*for(int i=0;i<(Crop_Result.length);i++){
+            TextView tv1=(TextView) findViewById(R.id.textView16);
+            tv1.setText(Crop_Result[0]);
+
+           if(Crop_Result[i]=="TOP"){
+                        k=(i-1);
+                 for( i=0;i<=(k);i++){
+                     extras.putString("name",Crop_Result[i] );
+                 }
+            }
+            else if(Crop_Result[i]=="SECOND"){
+                k=i;
+                for( i=0;i<=(k);i++){
+
+                }
+            }
+            else if(Crop_Result[i]=="TOPACCTOPRIORITY"){
+                k=i;
+                for( i=0;i<=(k);i++){
+
+                }
+            }
+
+            }*/
+
+
+
+        }
+
+
+
+
+    //private Bundle extras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +166,7 @@ public class Addition1 extends AppCompatActivity {
         setContentView(R.layout.activity_addition1);
         //taking data from bundle of intent
         Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
+         extras = intent.getExtras();
 
         name= extras.getString("name");
          Area= extras.getString("Area");
@@ -97,11 +197,24 @@ public class Addition1 extends AppCompatActivity {
         cb1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                tv6.setVisibility(View.VISIBLE);
-                et1.setVisibility(View.VISIBLE);
-            }
+                if(check) {
+                    tv6.setVisibility(View.VISIBLE);
+                    et1.setVisibility(View.VISIBLE);
+                    check=false;
+                }
+                else
+                {
+                    tv6.setVisibility(View.INVISIBLE);
+                    et1.setVisibility(View.INVISIBLE);
+                        check=true;
+                }
+                }
         });
+
+
+
+
+
 
 
     }

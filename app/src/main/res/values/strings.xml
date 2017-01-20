@@ -7,7 +7,7 @@
     <string name="button_info_field">Add New Field</string>
     <string name="button_info_UI">User Info</string>
     <string name="fieldname">Field Name</string>
-<string name="Rainques">Click if NO Irrigation is Available</string>
+    <string name="Rainques">Click if NO Irrigation is Available</string>
     <string name="save">SAVE</string>
     <string name="userfieldname"></string>
     <string name="title_activity_add_new_field">AddNewField</string>
@@ -23,7 +23,7 @@
     <string name="procedure">Crop Suggestion</string>
     <string name="cropgrown">Crop Grown :</string>
     <string name="info">Please Enter The Following Information/ Sync with Device</string>
-    <string name="AVGT">Average Temperature:</string>
+    <string name="AVGT">Average Temperature(Celcius):</string>
     <string name="AVGS">Total Hours of Sunshine:</string>
     <string name="AVGR">Average Rainfall in mm:</string>
     <string name="AVGPH">PH of Soil:</string>
@@ -39,7 +39,7 @@
     <string name="HintTemp">Temperature</string>
     <string name="HintHumidity">Humidity</string>
     <string name="Hintnitro">Nitrogen</string>
-
+<string name="CF">Confirm Crop</string>
     <string-array name="zones">
 
         <item>Mechi</item>
@@ -69,16 +69,16 @@
 
     <string-array name="Crop_names">
         <item>None</item>
-    <item>Corn</item>
-    <item>Lima Beans</item>
-    <item>Onions</item>
-    <item>Pea</item>
-    <item>Potatoes</item>
-    <item>Pumpkin</item>
-    <item>Rice</item>
-    <item>SoyBean</item>
-    <item>Strawberry</item>
-    <item>Wheat</item>
+        <item>Corn</item>
+        <item>Lima Beans</item>
+        <item>Onions</item>
+        <item>Pea</item>
+        <item>Potatoes</item>
+        <item>Pumpkin</item>
+        <item>Rice</item>
+        <item>SoyBean</item>
+        <item>Strawberry</item>
+        <item>Wheat</item>
     </string-array>
 
 

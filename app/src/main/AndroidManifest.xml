@@ -15,8 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".AddNewField"
             android:label="@string/field_adder" />
@@ -26,13 +24,18 @@
         <activity
             android:name=".showuserinfo"
             android:label="@string/user_info" />
-        <activity android:name=".Addition1"
-            android:label="@string/best_crop"/>
-        <activity android:name=".Addition2"
-            android:label="@string/currentsituaation"/>
-        <activity android:name=".Addition3"
-            android:label="@string/procedure"
-            />
+        <activity
+            android:name=".Addition1"
+            android:label="@string/best_crop" />
+        <activity
+            android:name=".Addition2"
+            android:label="@string/currentsituaation" />
+        <activity
+            android:name=".Addition3"
+            android:label="@string/procedure" />
+
+        <activity android:name=".ConfirmCrop"
+            android:label="@string/CF" />
     </application>
 
 </manifest>

@@ -30,14 +30,21 @@ public class AgroDatabase extends SQLiteOpenHelper {
             + "Humidity_Min REAL,"
             + "PH_Max REAL,"
             + "PH_Min REAL,"
-            + "Rain_Max REAL,"
-            + "Rain_Min REAL,"
-            +"Time_To_Harvest INTEGER,"
-            + "Nitrogen_Max REAL,"
-            + "Nitrogen_Min REAL);");
-        insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77,11);
-        insert_Data(db,"Rice",25,35,66,77,7,6,150,30,45,77,11);
+            + "Rain REAL,"
 
+            +"Time_To_Harvest INTEGER,"
+
+            + "Sunshine_Days INTEGER);");
+        insert_Data(db,"Rice",35,20,80,60,(float)6.5,(float)5.0,1400,150,6);
+        insert_Data(db,"Wheat",12,30,60,50,(float)3.7,7,310,120,6);
+        insert_Data(db,"Soybean",27,15,60,50,6,(float)6.8,60,100,6);
+        insert_Data(db,"Strawberries",27,15,60,50,7,(float)3.7,310,120,6);
+        insert_Data(db,"Peas",(float)24.1,(float)15.5,40,60,6,(float)7.5,0,70,6);
+        insert_Data(db,"Potatoes",30,10,80,50,6,(float)4.5,0,110,6);
+        insert_Data(db,"Pumpkin",32,21,60,40,7,(float)5.5,600,100,6);
+        insert_Data(db,"Onions",35,21,60,40,7,6,0,100,6);
+        insert_Data(db,"Corn",24,15,60,40,7,(float)5.5,0,75,6);
+        insert_Data(db,"LimaBeans",24,18,60,40,7,6,0,80,6);
 
 
         db.execSQL("CREATE TABLE "+TABLE_USERINFO+"("
@@ -64,8 +71,10 @@ public class AgroDatabase extends SQLiteOpenHelper {
     }
 
 
-private static void insert_Data(SQLiteDatabase db,String name,int tempmax,int tempmin,int humiditymax,
-                               int humidity_min,int phmax,int phmin,int rainmax,int rainmin,int D2H,int nitrogenmax,int nitrogenmin){
+private static void insert_Data(SQLiteDatabase db,String name,float tempmax,float tempmin,float humiditymax,
+                               float humidity_min,float phmax,float phmin,float rainmax,
+                                int T2H,int Sunshine){
+
 
 
     ContentValues crop_data= new ContentValues();
@@ -76,12 +85,13 @@ private static void insert_Data(SQLiteDatabase db,String name,int tempmax,int te
     crop_data.put("Humidity_Min",humidity_min);
     crop_data.put("PH_Max",phmax);
     crop_data.put("PH_Min",phmin);
-    crop_data.put("Rain_Max",rainmax);
-    crop_data.put("Rain_Min",rainmin);
-    crop_data.put("Time_To_Harvest",D2H);
-    crop_data.put("Nitrogen_Max",nitrogenmax);
-    crop_data.put("Nitrogen_Min",nitrogenmin);
-    db.insert("variables",null,crop_data);
+    crop_data.put("Rain",rainmax);
+
+    crop_data.put("Time_To_Harvest",T2H);
+    crop_data.put("Sunshine)Days",Sunshine);
+    //crop_data.put("Nitrogen_Max",N2max);
+    //crop_data.put("Nitrogen_Min",N2min);
+               db.insert("variables",null,crop_data);
 
 }
 
