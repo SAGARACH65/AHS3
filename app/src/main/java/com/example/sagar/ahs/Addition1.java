@@ -115,10 +115,10 @@ public class Addition1 extends AppCompatActivity {
         int k;
         if(nitrogen_entered<30){
 
-            nitromessage="Nitrogen Content is Low. You might want to plant Legumonistic Crops";
+            nitromessage="Nitrogen Content is Low.Plant Legumonistic Crops Alongside";
         }
         else if(nitrogen_entered>100){
-            nitromessage="Too much Nitrogen in Soil. You can plant Corn to minimize it";
+            nitromessage="Too much Nitrogen in Soil.Plant Corn to minimize it";
 
         }
 
@@ -135,6 +135,7 @@ public class Addition1 extends AppCompatActivity {
                Intent intent = new Intent(this, ConfirmCrop.class);
                extras.putString("Message","TOP");
                extras.putString("crops",joiner );
+               extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
             }
@@ -146,6 +147,7 @@ public class Addition1 extends AppCompatActivity {
                Intent intent = new Intent(this, ConfirmCrop.class);
                extras.putString("Message","SECOND");
                extras.putString("crops",joiner );
+               extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
 
@@ -158,6 +160,7 @@ public class Addition1 extends AppCompatActivity {
                Intent intent = new Intent(this, ConfirmCrop.class);
                extras.putString("Message","TOPACCTOPRIORITY");
                extras.putString("crops",joiner );
+               extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
            }
@@ -169,9 +172,10 @@ public class Addition1 extends AppCompatActivity {
                Intent intent = new Intent(this, ConfirmCrop.class);
                extras.putString("Message","NONE");
                extras.putString("crops",joiner );
+               extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
-
+                finish();
            }
 
             }

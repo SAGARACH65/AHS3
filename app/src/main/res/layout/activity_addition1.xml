@@ -101,6 +101,7 @@
             android:layout_height="match_parent"
             android:textColor="#ffff"
             android:id="@+id/tv122"
+
             android:background="@color/colorPrimary"
             android:textSize="13sp"
             android:textStyle="bold"

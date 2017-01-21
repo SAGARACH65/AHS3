@@ -7,8 +7,7 @@
         android:icon="@drawable/crops"
         android:label="@string/ahs"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,11 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AddNewField"
             android:label="@string/field_adder" />
-        <activity android:name="com.example.sagar.ahs.AndroidDatabaseManager"
-            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".AndroidDatabaseManager"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".homescreenjava"
             android:label="@string/main_page" />
@@ -36,9 +37,13 @@
         <activity
             android:name=".Addition3"
             android:label="@string/procedure" />
-
-        <activity android:name=".ConfirmCrop"
+        <activity
+            android:name=".ConfirmCrop"
             android:label="@string/CF" />
+        <activity android:name=".Addition1_Second"
+            android:label="@string/best_crop"/>
+
+
     </application>
 
 </manifest>

@@ -149,7 +149,7 @@ public class AgroDatabase extends SQLiteOpenHelper {
 
 
 
-
+//#not my code copied to see the contents of the table in database
     public ArrayList<Cursor> getData(String Query){
         //get writable database
         SQLiteDatabase sqlDB = this.getWritableDatabase();

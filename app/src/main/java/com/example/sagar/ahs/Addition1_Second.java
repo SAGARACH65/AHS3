@@ -6,16 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Addition3 extends AppCompatActivity {
+public class Addition1_Second extends AppCompatActivity {
     private String name;
     private String Area;
-    private String M_unit;
+    private  String M_unit;
     private String Crop_grown;
-    public void movetosecond(View view)
+    private Bundle extras;
+
+    public void moveToSecond(View view)
     {
 
         Intent intent = new Intent(this, Addition2.class);
-        Bundle extras = new Bundle();
+        extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
@@ -25,47 +27,47 @@ public class Addition3 extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    public void movetofirst(View view)
+    public void moveToThird(View view)
     {
 
-        Intent intent;
-        if(Crop_grown.equals("NA")) {
-            intent = new Intent(this, Addition1.class);
-        }
-        else{
-            intent = new Intent(this, Addition1_Second.class);
-        }
-
-        Bundle extras = new Bundle();
+        Intent intent = new Intent(this, Addition3.class);
+        extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
-         extras.putString("Crop planted",Crop_grown);
+        extras.putString("Crop planted",Crop_grown);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
+
     }
+    public void cancle(View view){
+
+
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition3);
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
+        setContentView(R.layout.activity_addition1__second);
 
         name= extras.getString("name");
         Area= extras.getString("Area");
         M_unit= extras.getString("Measurement Unit");
-         Crop_grown=extras.getString("Crop planted");
+        Crop_grown=extras.getString("Crop planted");
 
 
-        TextView tv1=(TextView) findViewById(R.id.textView50);
+        TextView tv1=(TextView) findViewById(R.id.textView16);
         tv1.setText(name);
-        TextView tv2=(TextView) findViewById(R.id.textView51);
+        TextView tv2=(TextView) findViewById(R.id.textView17);
         tv2.setText(Area);
-        TextView tv3=(TextView) findViewById(R.id.textView55);
+        TextView tv3=(TextView) findViewById(R.id.textView23);
         tv3.setText(M_unit);
-        TextView tv4=(TextView) findViewById(R.id.textView53);
+        TextView tv4=(TextView) findViewById(R.id.textView19);
         tv4.setText(Crop_grown);
+
+
     }
 }

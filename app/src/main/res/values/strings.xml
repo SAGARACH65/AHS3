@@ -39,7 +39,17 @@
     <string name="HintTemp">Temperature</string>
     <string name="HintHumidity">Humidity</string>
     <string name="Hintnitro">Nitrogen</string>
-<string name="CF">Confirm Crop</string>
+    <string name="CF">Confirm Crop</string>
+    <string name="nitrogen">Nitogen Information:</string>
+    <string name="cropinfo">Best Crops to plant:</string>
+    <string name="select">Select Crop</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="sidecrop">Select side crop</string>
+    <string name="sideinfo">Select The Crop You Want To Plant Alongside </string>
+    <string name="confirmedcrop">Conf</string>
+    <string name="plantedmessage">Crop has already been Selected</string>
+    <string name="canclemessage">Click the button below to Cancel current crop and plant a new one</string>
+    <string name="cancle">CANCEL</string>
     <string-array name="zones">
 
         <item>Mechi</item>

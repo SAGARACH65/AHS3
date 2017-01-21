@@ -14,8 +14,9 @@ public class Addition2 extends AppCompatActivity {
     public void movetothird(View view)
     {
 
-        Intent intent = new Intent(this, Addition3.class);
-        Bundle extras = new Bundle();
+            Intent intent = new Intent(this, Addition3.class);
+
+            Bundle extras = new Bundle();
 
         extras.putString("name",name);
         extras.putString("Area",Area);
@@ -27,8 +28,13 @@ public class Addition2 extends AppCompatActivity {
     }
     public void movetofirst(View view)
     {
-
-        Intent intent = new Intent(this, Addition1.class);
+        Intent intent;
+        if(Crop_grown.equals("NA")) {
+             intent = new Intent(this, Addition1.class);
+        }
+        else{
+             intent = new Intent(this, Addition1_Second.class);
+        }
         Bundle extras = new Bundle();
 
         extras.putString("name",name);
