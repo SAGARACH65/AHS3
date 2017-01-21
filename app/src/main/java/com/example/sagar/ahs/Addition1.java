@@ -124,10 +124,10 @@ public class Addition1 extends AppCompatActivity {
 
 
         for(int i=0;i<(Crop_Result.length);i++){
-            TextView tv1=(TextView) findViewById(R.id.textView16);
-            tv1.setText(Crop_Result[0]);
+           // TextView tv1=(TextView) findViewById(R.id.textView16);
+          //  tv1.setText(Crop_Result[0]);
 
-           if((Crop_Result[i]).equals("TOP")){
+           if("TOP".equals(Crop_Result[i])){
                         k=(i-1);
                  for( i=0;i<=(k);i++){
                      joiner=joiner+" "+Crop_Result[i];
@@ -139,7 +139,7 @@ public class Addition1 extends AppCompatActivity {
                intent.putExtras(extras);
                startActivity(intent);
             }
-            else if(Crop_Result[i].equals("SECOND")){
+            else if("SECOND".equals(Crop_Result[i])){
                 k=i-1;
                for( i=0;i<=(k);i++){
                    joiner=joiner+" "+Crop_Result[i];
@@ -152,7 +152,7 @@ public class Addition1 extends AppCompatActivity {
                startActivity(intent);
 
             }
-            else if(Crop_Result[i].equals("TOPACCTOPRIORITY")){
+            else if("TOPACCTOPRIORITY".equals(Crop_Result[i])){
                 k=i-1;
                for( i=0;i<=(k);i++){
                    joiner=joiner+" "+Crop_Result[i];
@@ -164,7 +164,7 @@ public class Addition1 extends AppCompatActivity {
                intent.putExtras(extras);
                startActivity(intent);
            }
-            else if(Crop_Result[i].equals("SelectedNotGood")){
+            else if("SelectedNotGood".equals(Crop_Result[i])){
                k=i-1;
                for( i=0;i<=(k);i++){
                    joiner=joiner+" "+Crop_Result[i];

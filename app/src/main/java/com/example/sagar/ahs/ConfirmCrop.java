@@ -41,9 +41,13 @@ public void confirmed(View view){
     Spinner spineer1=(Spinner) findViewById(R.id.spinner5);
     String side_crop=String.valueOf(spineer1.getSelectedItem());
 
-
+  //Bundle extras;
 
     Intent intent = new Intent(this, Addition1_Second.class);
+    extras.putString("name",name);
+    extras.putString("Area",Area);
+    extras.putString("Measurement Unit",M_unit);
+    extras.putString("Crop planted",Crop_grown);
     extras.putString("Crop planted",final_crop);
     intent.putExtras(extras);
     startActivity(intent);
@@ -74,7 +78,14 @@ String proxy;
         String info= extras.getString("Message");
         String crop=extras.getString("crops");
         String nitromessage=extras.getString("Nitrogen");
-        tv2.setText(nitromessage);
+        if(nitromessage!=null) {
+            tv2.setText(nitromessage);
+        }
+        else{
+            nitromessage="Nitrogen levels are Good";
+            tv2.setText(nitromessage);
+
+        }
         switch(info){
             case "TOP":
                 proxy="The Best Yielding Crops are:"+crop;

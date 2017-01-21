@@ -53,6 +53,11 @@ public class Addition1_Second extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addition1__second);
 
+
+        Intent intent = getIntent();
+        extras = intent.getExtras();
+
+
         name= extras.getString("name");
         Area= extras.getString("Area");
         M_unit= extras.getString("Measurement Unit");

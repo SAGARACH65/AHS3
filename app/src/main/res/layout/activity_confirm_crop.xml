@@ -128,7 +128,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView33"
         android:layout_toEndOf="@+id/textView33"
-        android:id="@+id/spinner5" />
+        android:id="@+id/spinner5"
+        android:entries="@array/zones"/>
 
     <ImageButton
         android:layout_width="wrap_content"

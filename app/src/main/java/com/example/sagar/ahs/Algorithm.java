@@ -17,8 +17,8 @@ public class Algorithm  {
     private int indexsecond=0;
     int var1=0,var2=0;
 
-    private String[] topCrops=new String[4];
-    private String[] secondCrops=new String[4];
+    private String[] topCrops=new String[10];
+    private String[] secondCrops=new String[10];
 
 
 
@@ -71,7 +71,7 @@ public class Algorithm  {
                             topCrops[indextop]=named;
                          indextop++;
                      }
-                    if(counter>=3){
+                    if(counter>=3&&counter<4){
                         secondCrops[indexsecond]=named;
                         indexsecond++;
                     }
