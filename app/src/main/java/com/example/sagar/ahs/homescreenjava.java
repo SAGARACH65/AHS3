@@ -42,7 +42,7 @@ public class homescreenjava extends AppCompatActivity {
         cursor=dbaa.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit","CropGrown","Growth_End_Date"},null,null,null,null,null);
 
 
-        //THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
+        ///THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
         CursorAdapter listAdapter= new SimpleCursorAdapter(this,
                                             android.R.layout.simple_list_item_2,
                                             cursor,
