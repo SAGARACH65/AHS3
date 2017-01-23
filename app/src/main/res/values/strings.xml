@@ -21,7 +21,7 @@
     <string name="best_crop">Select Best Crop</string>
     <string name="currentsituaation">Current Progress</string>
     <string name="procedure">Crop Suggestion</string>
-    <string name="cropgrown">Crop Grown :</string>
+    <string name="cropgrown">Crop:</string>
     <string name="info">Please Enter The Following Information/ Sync with Device</string>
     <string name="AVGT">Average Temperature(Celcius):</string>
     <string name="AVGS">Total Hours of Sunshine:</string>

@@ -1,6 +1,10 @@
 package com.example.sagar.ahs;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,8 +51,40 @@ public class Addition1_Second extends AppCompatActivity {
 
     }
     public void cancle(View view){
+        SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
+        SQLiteDatabase db = AgroDatabase.getWritableDatabase();
+       //removing the previous data
+        Cursor cursor1 = db.query("fieldinfo",
+                new String[]{"_id","FieldName", "CropGrown","SideCrop", "Growth_Start_Date","Growth_End_Date"},
+                null,
+                null, null, null, null
+        );
+
+        if(cursor1.moveToFirst()) {
+            int count=1;// as value of the row starts from 1 in database
+            do {
+                String fName = cursor1.getString(1);
 
 
+                if (fName.equals(name)) {
+                    ContentValues values = new ContentValues();
+                    values.put("FieldName",name);
+                    values.put("CropGrown", "NA");
+                    values.put("SideCrop","");
+                    values.put("Growth_Start_Date","");
+                    values.put("Growth_End_Date","");
+                    db.update("fieldinfo",values,"_id"+"="+count ,null);
+                    break;
+                }
+                count++;
+                cursor1.moveToNext();
+            } while (!cursor1.isAfterLast());
+            cursor1.close();}
+        //calling homescreen
+        Intent callnew =new Intent(this,homescreenjava.class);
+        callnew.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        this.startActivity(callnew);
+        finish();
 
     }
 
@@ -80,7 +116,7 @@ public class Addition1_Second extends AppCompatActivity {
         TextView tv5=(TextView) findViewById(R.id.tv122);
         tv5.setText(harvest_day);
 
-        Button button =(Button)findViewById(R.id.button4);
+        /*Button button =(Button)findViewById(R.id.button4);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -90,7 +126,7 @@ public class Addition1_Second extends AppCompatActivity {
             }
         });
 
-
+*/
 
     }
 }
