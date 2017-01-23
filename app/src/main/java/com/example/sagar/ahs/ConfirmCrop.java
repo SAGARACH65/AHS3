@@ -73,7 +73,7 @@ public void confirmed(View view){
 
                 }
                 cursor.moveToNext();
-            } while (cursor.isAfterLast());
+            } while (!cursor.isAfterLast());
             cursor.close();}
             //receiving current systems date
            /* Calendar now = Calendar.getInstance();
@@ -118,7 +118,7 @@ public void confirmed(View view){
                }
             count++;
             cursor1.moveToNext();
-        } while (cursor1.isAfterLast());
+        } while (!cursor1.isAfterLast());
         cursor1.close();}
 
 
@@ -126,8 +126,8 @@ public void confirmed(View view){
     extras.putString("name",name);
     extras.putString("Area",Area);
     extras.putString("Measurement Unit",M_unit);
-    extras.putString("Crop planted",Crop_grown);
     extras.putString("Crop planted",final_crop);
+    extras.putString("Growth_End_Date",end_date);
     intent.putExtras(extras);
     startActivity(intent);
     finish();

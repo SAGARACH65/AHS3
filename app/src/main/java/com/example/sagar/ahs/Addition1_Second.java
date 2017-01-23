@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Addition1_Second extends AppCompatActivity {
@@ -76,7 +77,18 @@ public class Addition1_Second extends AppCompatActivity {
         tv3.setText(M_unit);
         TextView tv4=(TextView) findViewById(R.id.textView19);
         tv4.setText(Crop_grown);
+        TextView tv5=(TextView) findViewById(R.id.tv122);
+        tv5.setText(harvest_day);
 
+        Button button =(Button)findViewById(R.id.button4);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent dbmanager = new Intent(getApplicationContext(),AndroidDatabaseManager.class);
+                startActivity(dbmanager);
+            }
+        });
 
 
 

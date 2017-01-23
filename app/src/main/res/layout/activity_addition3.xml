@@ -33,7 +33,7 @@
             android:textColor="#ffff"
             android:id="@+id/textView50"
             android:background="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_weight="1" />
 
@@ -41,11 +41,11 @@
 
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingStart="10dp"
+            android:paddingStart="8dp"
             android:textColor="#ffff"
             android:id="@+id/textView51"
             android:background="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_weight="1" />
         <TextView
@@ -53,7 +53,7 @@
             android:layout_height="match_parent"
             android:id="@+id/textView55"
             android:layout_weight="1"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textColor="#ffff"
             android:background="@color/colorPrimary"
             android:textStyle="bold"
@@ -62,11 +62,11 @@
             android:text="@string/cropgrown"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingStart="10dp"
+            android:paddingStart="8dp"
             android:textColor="#ffff"
             android:id="@+id/textView52"
             android:background="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_weight="1" />
 
@@ -77,18 +77,18 @@
             android:textColor="#ffff"
             android:id="@+id/textView53"
             android:background="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_weight="1" />
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingStart="10dp"
+            android:paddingStart="8dp"
             android:textColor="#ffff"
             android:text="@string/DTH"
             android:background="@color/colorPrimary"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:layout_weight="1" />
 
