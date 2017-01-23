@@ -67,11 +67,11 @@ public class Algorithm  {
 
 
 
-                     if(counter>=4){
+                     if(counter>=5){
                             topCrops[indextop]=named;
                          indextop++;
                      }
-                    if(counter>=3&&counter<4){
+                    if(counter>=3&&counter<5){
                         secondCrops[indexsecond]=named;
                         indexsecond++;
                     }

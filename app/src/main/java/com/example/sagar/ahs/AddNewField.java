@@ -78,7 +78,7 @@ public class AddNewField extends AppCompatActivity {
 
         }
         cursor.close();
-        db.close();
+        //db.close();
 
         Toast.makeText(this,
                 "Field Added", Toast.LENGTH_LONG).show();

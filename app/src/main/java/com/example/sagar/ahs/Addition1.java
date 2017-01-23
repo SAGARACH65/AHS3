@@ -22,6 +22,7 @@ public class Addition1 extends AppCompatActivity {
     private  String M_unit;
     private String Crop_grown;
     private Bundle extras;
+    private String harvest_day;
     Algorithm al1= new Algorithm(Addition1.this);
     public void moveToSecond(View view)
     {
@@ -33,6 +34,7 @@ public class Addition1 extends AppCompatActivity {
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
         extras.putString("Crop planted",Crop_grown);
+        extras.putString("Growth_End_Date",harvest_day);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -47,6 +49,7 @@ public class Addition1 extends AppCompatActivity {
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
         extras.putString("Crop planted",Crop_grown);
+        extras.putString("Growth_End_Date",harvest_day);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -110,7 +113,7 @@ public class Addition1 extends AppCompatActivity {
 
     public void unpackandsend(String []Crop_Result,float nitrogen_entered){
         String nitromessage=null;
-        String joiner=null;
+        String joiner=" ";
         byte checker=0;
         int k;
         if(nitrogen_entered<30){
@@ -138,6 +141,7 @@ public class Addition1 extends AppCompatActivity {
                extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
+               finish();
             }
             else if("SECOND".equals(Crop_Result[i])){
                 k=i-1;
@@ -150,7 +154,7 @@ public class Addition1 extends AppCompatActivity {
                extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
-
+               finish();
             }
             else if("TOPACCTOPRIORITY".equals(Crop_Result[i])){
                 k=i-1;
@@ -163,6 +167,7 @@ public class Addition1 extends AppCompatActivity {
                extras.putString("Nitrogen",nitromessage);
                intent.putExtras(extras);
                startActivity(intent);
+                finish();
            }
             else if("SelectedNotGood".equals(Crop_Result[i])){
                k=i-1;
@@ -203,6 +208,8 @@ public class Addition1 extends AppCompatActivity {
          M_unit= extras.getString("Measurement Unit");
          Crop_grown=extras.getString("Crop planted");
 
+        harvest_day=extras.getString("Growth_End_Date");
+
 
         TextView tv1=(TextView) findViewById(R.id.textView16);
         tv1.setText(name);
@@ -212,6 +219,8 @@ public class Addition1 extends AppCompatActivity {
         tv3.setText(M_unit);
         TextView tv4=(TextView) findViewById(R.id.textView19);
         tv4.setText(Crop_grown);
+        TextView tv5=(TextView) findViewById(R.id.tv122);
+        tv5.setText(harvest_day);
 
 
         //for the checkbox partial visibility of rainfall portion

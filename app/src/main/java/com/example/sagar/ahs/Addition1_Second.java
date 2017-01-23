@@ -11,6 +11,7 @@ public class Addition1_Second extends AppCompatActivity {
     private String Area;
     private  String M_unit;
     private String Crop_grown;
+    private String harvest_day;
     private Bundle extras;
 
     public void moveToSecond(View view)
@@ -22,6 +23,7 @@ public class Addition1_Second extends AppCompatActivity {
         extras.putString("name",name);
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
+        extras.putString("Growth_End_Date",harvest_day);
         extras.putString("Crop planted",Crop_grown);
         intent.putExtras(extras);
         startActivity(intent);
@@ -37,6 +39,7 @@ public class Addition1_Second extends AppCompatActivity {
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
         extras.putString("Crop planted",Crop_grown);
+        extras.putString("Growth_End_Date",harvest_day);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -62,6 +65,7 @@ public class Addition1_Second extends AppCompatActivity {
         Area= extras.getString("Area");
         M_unit= extras.getString("Measurement Unit");
         Crop_grown=extras.getString("Crop planted");
+        harvest_day=extras.getString("Growth_End_Date");
 
 
         TextView tv1=(TextView) findViewById(R.id.textView16);
@@ -72,6 +76,8 @@ public class Addition1_Second extends AppCompatActivity {
         tv3.setText(M_unit);
         TextView tv4=(TextView) findViewById(R.id.textView19);
         tv4.setText(Crop_grown);
+
+
 
 
     }

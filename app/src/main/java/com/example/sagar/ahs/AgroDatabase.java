@@ -63,16 +63,18 @@ public class AgroDatabase extends SQLiteOpenHelper {
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "User_Name TEXT,"
                 + "Location TEXT,"
-                + "CurrentNoFields INTEGER);");
+                +"CurrentNoFields INTEGER"
+                +"Total Area TEXT"
+                + "Crops_Grown TEXT);");
         db.execSQL("CREATE TABLE "+TABLE_FIELDINFO+"("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "FieldName TEXT,"
                 + "Area TEXT,"
                 + "Measure_Unit TEXT,"
-                + "CropGrown  TEXT,"
-                +"Growth_Date   INTEGER,"
-                +"Growth_Month   INTEGER,"
-                +"Growth_Year   INTEGER);");
+                + "CropGrown TEXT,"
+                + "SideCrop TEXT,"
+                +"Growth_Start_Date TEXT,"
+                +"Growth_End_Date TEXT);");
         /*insert_Data(db,"Rice",35,20,80,60,(float)6.5,(float)5.0,1400,150,6);
         insert_Data(db,"Wheat",12,30,60,50,(float)3.7,7,310,120,6);
         insert_Data(db,"Soybean",27,15,60,50,6,(float)6.8,60,100,6);

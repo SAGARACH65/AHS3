@@ -39,7 +39,7 @@ public class homescreenjava extends AppCompatActivity {
 
         SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
          dbaa = AgroDatabase.getReadableDatabase();
-        cursor=dbaa.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit","CropGrown"},null,null,null,null,null);
+        cursor=dbaa.query("fieldinfo",new String[]{"_id", "FieldName","Area","Measure_Unit","CropGrown","Growth_End_Date"},null,null,null,null,null);
 
 
         //THIS PORTION IS SHOWING THE USER FIELD NAMES IN LISTACTIVITY
@@ -55,17 +55,26 @@ public class homescreenjava extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Intent intent = new Intent(homescreenjava.this, Addition1.class);
+
                 final String name= cursor.getString(1);
                 final String Area=cursor.getString(2);
                 final String M_unit=cursor.getString(3);
                 final String Crop_grown=cursor.getString(4);
-            Bundle extras = new Bundle();
+                final String harvest_day=cursor.getString(5);
+                final Intent intent;
+                if("NA".equals(Crop_grown)){
+                 intent = new Intent(homescreenjava.this, Addition1.class);}
+            else{
+                     intent = new Intent(homescreenjava.this, Addition1_Second.class);
+                }
+
+                Bundle extras = new Bundle();
 
                 extras.putString("name",name);
                 extras.putString("Area",Area);
                 extras.putString("Measurement Unit",M_unit);
                extras.putString("Crop planted",Crop_grown);
+                extras.putString("Growth_End_Date",harvest_day);
                intent.putExtras(extras);
                 startActivity(intent);
 
@@ -80,6 +89,12 @@ public class homescreenjava extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        cursor.close();
+        //dbaa.close();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
         cursor.close();
         //dbaa.close();
     }
