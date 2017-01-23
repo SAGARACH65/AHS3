@@ -73,6 +73,7 @@ public class AgroDatabase extends SQLiteOpenHelper {
                 + "Measure_Unit TEXT,"
                 + "CropGrown TEXT,"
                 + "SideCrop TEXT,"
+
                 +"Growth_Start_Date TEXT,"
                 +"Growth_End_Date TEXT);");
         /*insert_Data(db,"Rice",35,20,80,60,(float)6.5,(float)5.0,1400,150,6);

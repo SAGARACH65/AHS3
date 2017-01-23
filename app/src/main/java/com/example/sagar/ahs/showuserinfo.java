@@ -1,10 +1,16 @@
 package com.example.sagar.ahs;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.CursorAdapter;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +21,6 @@ public class showuserinfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showuserinfo);
 
-            try {
                 //accesing the database for information
                 SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
                 SQLiteDatabase db = AgroDatabase.getReadableDatabase();
@@ -38,12 +43,29 @@ public class showuserinfo extends AppCompatActivity {
                     nof.setText(nofd);
                 }
                 cursor.close();
-                db.close();
-            }catch (Exception e)
-            {
-              //  Toast toast=Toasto.makeText("Database Unavailable",Toast.LENGTH_LONG);
-                //        toast.show();
-            }
+                ListView m_listview = (ListView) findViewById(R.id.list_view);
+                final Cursor cursor1 = db.query("fieldinfo",
+                        new String[]{"_id", "Area","Measure_Unit","CropGrown"},
+                        null,
+                        null, null, null, null
+                );
+
+                CursorAdapter listAdapter = new SimpleCursorAdapter(this,
+                        android.R.layout.simple_list_item_2,
+                        cursor1,
+                        new String[]{"CropGrown"},
+                        new int[]{android.R.id.text1}, 0);
+
+                m_listview.setAdapter(listAdapter);
+                m_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position,
+                                            long id) {
+
+
+                    }});
+
 
     }
 }

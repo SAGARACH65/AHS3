@@ -1,8 +1,13 @@
 <resources>
     <string name="userinfo">Please Enter Your Information</string>
     <string name="username">Name</string>
+    <string name="Error_Message">Please Select a Crop First</string>
     <string name="ahs">Annual Harvest Suggestor</string>
     <string name="app_name">AHS</string>
+    <string name="Current_Crop">Current Crop:</string>
+    <string name="SideCrop">Side Crop:</string>
+    <string name="PlantedDate">Planted Date:</string>
+    <string name="Expected_Harvest_Date">Expected Harvest Date:</string>
     <string name="main_page">Main Page</string>
     <string name="button_info_field">Add New Field</string>
     <string name="button_info_UI">User Info</string>
