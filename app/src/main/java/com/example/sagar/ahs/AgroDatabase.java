@@ -97,6 +97,16 @@ public class AgroDatabase extends SQLiteOpenHelper {
         insert_Data(db,"Onions",35,21,60,40,7,6,0,100,6);
         insert_Data(db,"Corn",24,15,60,40,7,5,0,75,6);
         insert_Data(db,"LimaBeans",24,18,60,40,7,6,0,80,6);
+        insert_Data(db,"Cauliflower",27,16,80,70,7,6,0,75,6);
+        insert_Data(db,"Carrots",29,7,60,50,8,6,0,70,6);
+        insert_Data(db,"Cabbage",35,7,60,40,8,6,0,70,6);
+        insert_Data(db,"Broccoli",26,16,50,40,8,6,0,70,6);
+        insert_Data(db,"Turnip",30,15,50,40,7,5,0,55,6);
+        insert_Data(db,"Spinach",23,10,50,40,7,6,0,40,4);
+        insert_Data(db,"Raddish",32,7,60,50,7,6,0,90,6);
+        insert_Data(db,"Lettuce",24,4,70,50,7,6,0,90,6);
+        insert_Data(db,"Garlic",24,13,65,50,8,5,0,140,6);
+        insert_Data(db,"Cucumber",35,22,60,50,8,5,0,60,6);
 
 
 

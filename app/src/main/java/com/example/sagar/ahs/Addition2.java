@@ -117,7 +117,7 @@ public class Addition2 extends AppCompatActivity {
         TextView tv12=(TextView) findViewById(R.id.textView40);
         TextView tv13=(TextView) findViewById(R.id.textView41);
         TextView tv14=(TextView) findViewById(R.id.textView37);
-        if("NA".equals(name1)){
+        if("NA".equals(Crop_grown)){
 
             tv6.setVisibility(View.INVISIBLE);
             tv7.setVisibility(View.INVISIBLE);

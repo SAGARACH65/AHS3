@@ -84,17 +84,179 @@
 
     <string-array name="Crop_names">
         <item>None</item>
+        <item>Broccoli</item>
+        <item>Cabbage</item>
+        <item>Carrots</item>
         <item>Corn</item>
-        <item>Lima Beans</item>
+        <item>Cauliflower</item>
+        <item>Cucumber</item>
+        <item>Garlic</item>
+        <item>Lettuce</item>
+        <item>LimaBeans</item>
         <item>Onions</item>
         <item>Pea</item>
         <item>Potatoes</item>
         <item>Pumpkin</item>
+       <item>Raddish</item>
         <item>Rice</item>
         <item>SoyBean</item>
+        <item>Spinach</item>
         <item>Strawberry</item>
+        <item>Turnip</item>
         <item>Wheat</item>
     </string-array>
+<string-array name="turnip">
+    <item>NONE</item>
+    <item>Onions</item>
+    <item>Pea</item>
+</string-array>
+    <string-array name="Cabbage">
+    <item>NONE</item>
+    <item>Carrots</item>
+    <item>Cucumber</item>
+    <item>Onions</item>
+    <item>Potatoes</item>
+    <item>Spinach</item>
+</string-array>
+
+    <string-array name="Cauliflower">
+        <item>NONE</item>
+        <item>Carrots</item>
+        <item>Cucumber</item>
+        <item>Onions</item>
+        <item>Potatoes</item>
+    </string-array>
+
+    <string-array name="Brocli">
+        <item>NONE</item>
+        <item>Carrots</item>
+        <item>Cucumber</item>
+        <item>Garlic</item>
+        <item>Potatoes</item>
+    </string-array>
+
+    <string-array name="Carrot">
+        <item>NONE</item>
+        <item>Cabbage</item>
+        <item>Onions</item>
+        <item>Pea</item>
+        <item>Raddish</item>
+    </string-array>
+
+    <string-array name="Lettuce">
+        <item>NONE</item>
+        <item>Carrots</item>
+        <item> Cucumber</item>
+        <item>Onions</item>
+    </string-array>
+
+    <string-array name="Cucumber">
+        <item>NONE</item>
+        <item>Cabbage</item>
+        <item>Carrots</item>
+        <item>Corn</item>
+        <item>Cucumber</item>
+        <item>Pea</item>
+    </string-array>
+
+    <string-array name="Garlic">
+        <item>NONE</item>
+    </string-array>
+
+    <string-array name="Spinach">
+        <item>NONE</item>
+        <item>Cabbage</item>
+        <item>Corn</item>
+        <item>Raddish</item>
+        <item>Pea</item>
+        <item>Strawberry</item>
+    </string-array>
+
+    <string-array name="Raddish">
+        <item>NONE</item>
+        <item>Cabbage</item>
+        <item>Carrots</item>
+        <item>Corn</item>
+        <item> Cucumber</item>
+        <item>Pea</item>
+    </string-array>
+
+
+    <string-array name="Onions">
+        <item>NONE</item>
+        <item>Broccoli</item>
+        <item>Cabbage</item>
+        <item>Carrots</item>
+        <item>Cauliflower</item>
+        <item>Potatoes</item>
+        <item>Spinach</item>
+    </string-array>
+
+    <string-array name="Corn">
+        <item>NONE</item>
+        <item>Cabbage</item>
+        <item> Cucumber</item>
+        <item>Pea</item>
+        <item>Pumpkin</item>
+    </string-array>
+
+    <string-array name="Limabeans">
+        <item> Raddish</item>
+    </string-array>
+
+
+
+    <string-array name="Rice">
+    <item>NONE</item>
+</string-array>
+
+    <string-array name="Wheat">
+        <item>NONE</item>
+    </string-array>
+
+    <string-array name="SoyBean">
+        <item>NONE</item>
+        <item>Potatoes</item>
+        <item>Cucumber</item>
+        <item>Corn</item>
+        <item>Strawberry</item>
+    </string-array>
+
+    <string-array name="Strawberries">
+        <item>NONE</item>
+        <item>Onions</item>
+        <item>Lettuce</item>
+        <item>Pea</item>
+    </string-array>
+
+    <string-array name="Peas">
+        <item>NONE</item>
+        <item>Carrots</item>
+        <item>Strawberry</item>
+        <item>Turnip</item>
+        <item>Cucumber</item>
+        <item>Raddish</item>
+    </string-array>
+
+    <string-array name="Potatoes">
+        <item>NONE</item>
+        <item>Cabbage</item>
+        <item>Corn</item>
+        <item>Pea</item>
+    </string-array>
+
+    <string-array name="Pumpkin">
+        <item>NONE</item>
+        <item>Corn</item>
+        <item>Onions</item>
+        <item>Raddish</item>
+        <item>Pea</item>
+        <item>Strawberry</item>
+    </string-array>
+
+
+
+
 
 
 </resources>
