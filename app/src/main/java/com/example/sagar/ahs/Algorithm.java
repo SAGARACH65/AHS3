@@ -17,8 +17,8 @@ public class Algorithm  {
     private int indexsecond=0;
     int var1=0,var2=0;
 
-    private String[] topCrops=new String[10];
-    private String[] secondCrops=new String[10];
+    private String[] topCrops=new String[20];
+    private String[] secondCrops=new String[20];
 
 
 
