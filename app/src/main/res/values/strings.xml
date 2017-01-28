@@ -11,6 +11,9 @@
     <string name="main_page">Main Page</string>
     <string name="button_info_field">Add New Field</string>
     <string name="button_info_UI">User Info</string>
+    <string name="fertilizer">Fertilizer to Use</string>
+    <string name="planting">Planting Procedure</string>
+    <string name="Storage">Storage Suggestions</string>
     <string name="fieldname">Field Name</string>
     <string name="Rainques">Click if NO Irrigation is Available</string>
     <string name="save">SAVE</string>
@@ -37,7 +40,8 @@
     <string name="sync">SYNC</string>
     <string name="chose">Chose Best Crop</string>
     <string name="Croppriority">Set Priority Crop</string>
-
+    <string name="maincrop">Main Crop</string>
+    <string name="sidecrop1">Side Crop</string>
     <string name="HintPH">PH</string>
     <string name="HintSunshine">Sunshine</string>
     <string name="HintRain">Rainfall</string>
@@ -97,7 +101,7 @@
         <item>Pea</item>
         <item>Potatoes</item>
         <item>Pumpkin</item>
-       <item>Raddish</item>
+        <item>Raddish</item>
         <item>Rice</item>
         <item>SoyBean</item>
         <item>Spinach</item>
@@ -105,19 +109,19 @@
         <item>Turnip</item>
         <item>Wheat</item>
     </string-array>
-<string-array name="turnip">
-    <item>NONE</item>
-    <item>Onions</item>
-    <item>Pea</item>
-</string-array>
+    <string-array name="turnip">
+        <item>NONE</item>
+        <item>Onions</item>
+        <item>Pea</item>
+    </string-array>
     <string-array name="Cabbage">
-    <item>NONE</item>
-    <item>Carrots</item>
-    <item>Cucumber</item>
-    <item>Onions</item>
-    <item>Potatoes</item>
-    <item>Spinach</item>
-</string-array>
+        <item>NONE</item>
+        <item>Carrots</item>
+        <item>Cucumber</item>
+        <item>Onions</item>
+        <item>Potatoes</item>
+        <item>Spinach</item>
+    </string-array>
 
     <string-array name="Cauliflower">
         <item>NONE</item>
@@ -201,14 +205,14 @@
     </string-array>
 
     <string-array name="Limabeans">
+        <item>NONE</item>
         <item> Raddish</item>
     </string-array>
 
 
-
     <string-array name="Rice">
-    <item>NONE</item>
-</string-array>
+        <item>NONE</item>
+    </string-array>
 
     <string-array name="Wheat">
         <item>NONE</item>
@@ -253,9 +257,6 @@
         <item>Pea</item>
         <item>Strawberry</item>
     </string-array>
-
-
-
 
 
 

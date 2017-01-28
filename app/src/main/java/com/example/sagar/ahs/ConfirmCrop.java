@@ -25,6 +25,7 @@ public class ConfirmCrop extends AppCompatActivity {
     private String Area;
     private  String M_unit;
     private String Crop_grown;
+    private String nitromessage;
    private int days;
 
 public void showviews(View view)
@@ -269,6 +270,7 @@ public void confirmed(View view){
                 values.put("SideCrop",side_crop);
                 values.put("Growth_Start_Date",reg_date);
                 values.put("Growth_End_Date",end_date);
+
                 db.update("fieldinfo",values,"_id"+"="+count ,null);
                 break;
                }
@@ -284,6 +286,7 @@ public void confirmed(View view){
     extras.putString("Measurement Unit",M_unit);
     extras.putString("Crop planted",final_crop);
     extras.putString("Growth_End_Date",end_date);
+    extras.putString("nitromessage",nitromessage);
     intent.putExtras(extras);
     startActivity(intent);
     finish();
@@ -312,7 +315,7 @@ public void confirmed(View view){
 String proxy;
         String info= extras.getString("Message");
         String crop=extras.getString("crops");
-        String nitromessage=extras.getString("Nitrogen");
+         nitromessage=extras.getString("Nitrogen");
         if(nitromessage!=null) {
             tv2.setText(nitromessage);
         }

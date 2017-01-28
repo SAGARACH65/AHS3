@@ -15,7 +15,7 @@ public class Addition2 extends AppCompatActivity {
     private String M_unit;
     private String harvest_day;
     private String Crop_grown;
-
+    private String nitromessage;
     private String cg;
     private String sc;
     private String gd;
@@ -33,6 +33,7 @@ public class Addition2 extends AppCompatActivity {
         extras.putString("Measurement Unit",M_unit);
          extras.putString("Crop planted",Crop_grown);
         extras.putString("Growth_End_Date",harvest_day);
+        extras.putString("nitromessage",nitromessage);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -53,6 +54,7 @@ public class Addition2 extends AppCompatActivity {
         extras.putString("Measurement Unit",M_unit);
         extras.putString("Growth_End_Date",harvest_day);
          extras.putString("Crop planted",Crop_grown);
+        extras.putString("nitromessage",nitromessage);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -70,6 +72,8 @@ public class Addition2 extends AppCompatActivity {
         M_unit= extras.getString("Measurement Unit");
          Crop_grown=extras.getString("Crop planted");
         harvest_day=extras.getString("Growth_End_Date");
+        nitromessage=extras.getString("nitromessage");
+
 
 
         TextView tv1=(TextView) findViewById(R.id.textView88);

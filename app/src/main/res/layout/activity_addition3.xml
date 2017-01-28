@@ -144,7 +144,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:weightSum="3">
 
         <TextView
@@ -179,7 +179,104 @@
             android:background="@color/colorAccent"
             />
     </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
+        <Button
+            android:text="@string/planting"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:id="@+id/button8"
+            android:layout_below="@+id/button7"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/food"
+            android:onClick="plantMain (Addition3)" />
 
+        <Button
+            android:text="@string/Storage"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/button8"
+            android:layout_alignEnd="@+id/button8"
+            android:id="@+id/button9"
+            android:drawableLeft="@drawable/asd"
+            android:onClick="storageMain (Addition3)" />
 
+        <Button
+            android:text="@string/planting"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/button12"
+            android:layout_alignEnd="@+id/button12"
+            android:id="@+id/button13"
+            android:drawableLeft="@drawable/food"
+            android:onClick="plantSide (Addition3)" />
+
+        <Button
+            android:text="@string/Storage"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/button13"
+            android:layout_alignStart="@+id/button13"
+            android:id="@+id/button14"
+            android:drawableLeft="@drawable/asd"
+            android:onClick="storageSide (Addition3)" />
+
+        <TextView
+            android:text="@string/maincrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView46"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#ffff"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="11dp" />
+
+        <Button
+            android:text="@string/fertilizer"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="11dp"
+            android:id="@+id/button7"
+            android:drawableLeft="@drawable/fertilizer"
+            android:layout_below="@+id/textView46"
+            android:layout_alignStart="@+id/button8"
+            android:onClick="fertilizerMain (Addition3)" />
+
+        <TextView
+            android:text="@string/sidecrop1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:id="@+id/textView47"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#ffff"
+            android:background="@color/colorPrimary"
+            android:layout_below="@+id/button9"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="@string/fertilizer"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="11dp"
+            android:id="@+id/button12"
+            android:drawableLeft="@drawable/fertilizer"
+            android:layout_below="@+id/textView47"
+            android:layout_alignStart="@+id/button9"
+            android:onClick="fertilizerSide (Addition3)" />
+    </RelativeLayout>
+
+</ScrollView>
 </LinearLayout>

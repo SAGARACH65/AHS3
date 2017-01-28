@@ -78,6 +78,7 @@ public class homescreenjava extends AppCompatActivity {
                 extras.putString("Measurement Unit", M_unit);
                 extras.putString("Crop planted", Crop_grown);
                 extras.putString("Growth_End_Date", harvest_day);
+                extras.putString("nitromessage","NA");
                 intent.putExtras(extras);
                 startActivity(intent);
 

@@ -1,6 +1,9 @@
 package com.example.sagar.ahs;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,10 @@ public class Addition3 extends AppCompatActivity {
     private String M_unit;
     private String harvest_day;
     private String Crop_grown;
+    private String nitromessage;
+
+private String info;
+    String fn,mcn,scn;//mcn=mainCropName
     public void movetosecond(View view)
     {
 
@@ -23,6 +30,7 @@ public class Addition3 extends AppCompatActivity {
         extras.putString("Measurement Unit",M_unit);
         extras.putString("Crop planted",Crop_grown);
         extras.putString("Growth_End_Date",harvest_day);
+        extras.putString("nitromessage",nitromessage);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
@@ -44,11 +52,75 @@ public class Addition3 extends AppCompatActivity {
         extras.putString("Area",Area);
         extras.putString("Measurement Unit",M_unit);
          extras.putString("Crop planted",Crop_grown);
+        extras.putString("nitromessage",nitromessage);
         extras.putString("Growth_End_Date",harvest_day);
         intent.putExtras(extras);
         startActivity(intent);
         finish();
     }
+
+
+    public void fertilizerMain(View view){
+        Intent intent = new Intent(this,InfoDisplay.class);
+     Bundle xx=new Bundle();
+        xx.putString("info","fertilizerMain");
+        xx.putString("crop",mcn);
+        intent.putExtras(xx);
+        startActivity(intent);
+
+    }
+    public void fertilizerSide(View view){
+        Intent intent = new Intent(this,InfoDisplay.class);
+        Bundle xx=new Bundle();
+        xx.putString("info","fertilizerSide");
+        xx.putString("crop",scn);
+        intent.putExtras(xx);
+        startActivity(intent);
+
+
+    }
+    public void plantMain(View view){
+
+        Intent intent = new Intent(this,InfoDisplay.class);
+        Bundle xx=new Bundle();
+        xx.putString("info","plantMain");
+        xx.putString("crop",mcn);
+        intent.putExtras(xx);
+        startActivity(intent);
+
+    }
+    public void plantSide(View view){
+
+        Intent intent = new Intent(this,InfoDisplay.class);
+        Bundle xx=new Bundle();
+        xx.putString("info","plantSide");
+        xx.putString("crop",scn);
+        intent.putExtras(xx);
+        startActivity(intent);
+
+    }
+    public void storageMain(View view){
+
+        Intent intent = new Intent(this,InfoDisplay.class);
+        Bundle xx=new Bundle();
+        xx.putString("info","storageMain");
+        xx.putString("crop",mcn);
+        intent.putExtras(xx);
+        startActivity(intent);
+
+    }
+    public void storageSide(View view){
+
+        Intent intent = new Intent(this,InfoDisplay.class);
+        Bundle xx=new Bundle();
+        xx.putString("info","storageSide");
+        xx.putString("crop",scn);
+        intent.putExtras(xx);
+        startActivity(intent);
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +133,8 @@ public class Addition3 extends AppCompatActivity {
         M_unit= extras.getString("Measurement Unit");
          Crop_grown=extras.getString("Crop planted");
         harvest_day=extras.getString("Growth_End_Date");
+        nitromessage=extras.getString("nitromessage");
+
 
 
         TextView tv1=(TextView) findViewById(R.id.textView50);
@@ -73,5 +147,29 @@ public class Addition3 extends AppCompatActivity {
         tv4.setText(Crop_grown);
         TextView tv5=(TextView) findViewById(R.id.tv122);
         tv5.setText(harvest_day);
+
+        SQLiteOpenHelper AgroDatabase = new AgroDatabase(this);
+        SQLiteDatabase db = AgroDatabase.getReadableDatabase();
+        Cursor cursor1 = db.query("fieldinfo",
+                new String[]{"_id","FieldName", "CropGrown","SideCrop"},
+                null,
+                null, null, null, null
+        );
+
+
+        if(cursor1.moveToFirst()){
+            do {
+                fn = cursor1.getString(1);
+                mcn=cursor1.getString(2);
+                scn=cursor1.getString(3);
+                if(fn.equals(name)){
+                    break;
+
+                }
+                cursor1.moveToNext();
+            }while(!cursor1.isAfterLast());
+        }
+
+
     }
 }

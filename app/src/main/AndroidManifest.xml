@@ -15,7 +15,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".AddNewField"
             android:label="@string/field_adder" />
@@ -40,10 +39,10 @@
         <activity
             android:name=".ConfirmCrop"
             android:label="@string/CF" />
-        <activity android:name=".Addition1_Second"
-            android:label="@string/best_crop"/>
-
-
+        <activity
+            android:name=".Addition1_Second"
+            android:label="@string/best_crop" />
+        <activity android:name=".InfoDisplay"></activity>
     </application>
 
 </manifest>
