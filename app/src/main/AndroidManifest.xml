@@ -42,7 +42,10 @@
         <activity
             android:name=".Addition1_Second"
             android:label="@string/best_crop" />
-        <activity android:name=".InfoDisplay"></activity>
+        <activity android:name=".InfoDisplay"
+            android:label="@string/information"/>
+
+
     </application>
 
 </manifest>

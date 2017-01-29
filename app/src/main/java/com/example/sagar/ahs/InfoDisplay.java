@@ -57,7 +57,7 @@ public class InfoDisplay extends AppCompatActivity {
             switch (info){
                 case"fertilizerMain":
                     tv.setText(Fertilizer);
-                    break;
+                 break;
                 case"fertilizerSide":
                     tv.setText(Fertilizer);
                     break;

@@ -61,8 +61,11 @@ public class Addition1 extends AppCompatActivity {
 
     public void syncDevice(View view)
     {
+        BlueToothController bc1=new BlueToothController();
+
 
     }
+
     public void findCrop(View view) {
         //getting the environmental variable values
         Spinner prioritycrop = (Spinner) findViewById(R.id.spinner3);

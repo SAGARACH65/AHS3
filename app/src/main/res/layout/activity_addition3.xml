@@ -195,7 +195,7 @@
             android:layout_below="@+id/button7"
             android:layout_centerHorizontal="true"
             android:drawableLeft="@drawable/food"
-            android:onClick="plantMain (Addition3)" />
+            android:onClick="plantMain" />
 
         <Button
             android:text="@string/Storage"
@@ -205,7 +205,7 @@
             android:layout_alignEnd="@+id/button8"
             android:id="@+id/button9"
             android:drawableLeft="@drawable/asd"
-            android:onClick="storageMain (Addition3)" />
+            android:onClick="storageMain" />
 
         <Button
             android:text="@string/planting"
@@ -215,7 +215,7 @@
             android:layout_alignEnd="@+id/button12"
             android:id="@+id/button13"
             android:drawableLeft="@drawable/food"
-            android:onClick="plantSide (Addition3)" />
+            android:onClick="plantSide" />
 
         <Button
             android:text="@string/Storage"
@@ -225,7 +225,7 @@
             android:layout_alignStart="@+id/button13"
             android:id="@+id/button14"
             android:drawableLeft="@drawable/asd"
-            android:onClick="storageSide (Addition3)" />
+            android:onClick="storageSide" />
 
         <TextView
             android:text="@string/maincrop"
@@ -250,7 +250,7 @@
             android:drawableLeft="@drawable/fertilizer"
             android:layout_below="@+id/textView46"
             android:layout_alignStart="@+id/button8"
-            android:onClick="fertilizerMain (Addition3)" />
+            android:onClick="fertilizerMain" />
 
         <TextView
             android:text="@string/sidecrop1"
@@ -275,7 +275,7 @@
             android:drawableLeft="@drawable/fertilizer"
             android:layout_below="@+id/textView47"
             android:layout_alignStart="@+id/button9"
-            android:onClick="fertilizerSide (Addition3)" />
+            android:onClick="fertilizerSide" />
     </RelativeLayout>
 
 </ScrollView>
