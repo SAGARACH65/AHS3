@@ -225,7 +225,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
         android:paddingStart="10dp"
         android:hint="@string/HintTemp"
         android:ems="10"
@@ -271,7 +271,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="number|numberDecimal"
         android:paddingStart="10dp"
         android:hint="@string/HintSunshine"
         android:ems="10"
@@ -295,7 +295,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="number|numberSigned"
         android:paddingStart="10dp"
         android:hint="@string/HintHumidity"
         android:ems="10"

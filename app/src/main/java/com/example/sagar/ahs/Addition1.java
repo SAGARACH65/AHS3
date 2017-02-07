@@ -67,6 +67,7 @@ public class Addition1 extends AppCompatActivity {
     InputStream mmInputStream;
     Thread workerThread;
     byte[] readBuffer;
+
     public void moveToSecond(View view) {
 
         Intent intent = new Intent(this, Addition2.class);
@@ -126,9 +127,12 @@ public class Addition1 extends AppCompatActivity {
         }catch (Exception e2) {
                 Log.e("", "Couldn't establish Bluetooth connection!");
             }
-            ConnectedThread b1 = new ConnectedThread(btSocket);
+         ConnectedThread b1 = new ConnectedThread(btSocket);
+
+        b1.start();
+        mBluetoothAdapter.disable();
     }
-    public class ConnectedThread extends Thread {
+    public class ConnectedThread extends Thread  {
         private final BluetoothSocket mmSocket;
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
@@ -147,21 +151,21 @@ public class Addition1 extends AppCompatActivity {
                 ///Log.e(TAG, "Error occurred when creating input stream", e);
             }
             try {
-                tmpOut = socket.getOutputStream();
+               tmpOut = socket.getOutputStream();
             } catch (IOException e) {
-                // Log.e(TAG, "Error occurred when creating output stream", e);
+                 Log.e(TAG, "Error occurred when creating output stream", e);
             }
 
             mmInStream = tmpIn;
-            mmOutStream = tmpOut;
+           mmOutStream = tmpOut;
         }
-
+        @Override
         public void run() {
             mmBuffer = new byte[1024];
             int numBytes; // bytes returned from read()
 
             // Keep listening to the InputStream until an exception occurs.
-            while (true) {
+            //while (true) {
                 try {
                     // Read from the InputStream.
                     numBytes = mmInStream.read(mmBuffer);
@@ -172,124 +176,12 @@ public class Addition1 extends AppCompatActivity {
                     readMsg.sendToTarget();
 
                 } catch (IOException e) {
-
-                    break;
-                }
+                    Log.d(TAG, "Input stream was disconnected", e);
+                    //break;
+               // }
             }
         }
     }
-       /* UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); //Standard SerialPortService ID
-        mmSocket = mmDevice.createRfcommSocketToServiceRecord(uuid);
-        mmSocket.connect();
-        mmOutputStream = mmSocket.getOutputStream();
-        mmInputStream = mmSocket.getInputStream();
-
-        //beginListenForData();
-        final Handler handler = new Handler();
-        final byte delimiter = 10; //This is the ASCII code for a newline character
-
-       // stopWorker = false;
-        readBufferPosition = 0;
-        readBuffer = new byte[1024];
-        workerThread = new Thread(new Runnable()
-        {
-            public void run()
-            {
-                while(!Thread.currentThread().isInterrupted() )
-                {
-                    try
-                    {
-                        int bytesAvailable = mmInputStream.available();
-                        if(bytesAvailable > 0)
-                        {
-                            byte[] packetBytes = new byte[bytesAvailable];
-                            mmInputStream.read(packetBytes);
-                            for(int i=0;i<bytesAvailable;i++)
-                            {
-                                byte b = packetBytes[i];
-                                if(b == delimiter)
-                                {
-                                    byte[] encodedBytes = new byte[readBufferPosition];
-                                    System.arraycopy(readBuffer, 0, encodedBytes, 0, encodedBytes.length);
-                                    final String data = new String(encodedBytes, "US-ASCII");
-                                    readBufferPosition = 0;
-
-                                    handler.post(new Runnable()
-                                    {
-                                        public void run()
-                                        {
-                          //                  myLabel.setText(data);
-                                        }
-                                    });
-                                }
-                                else
-                                {
-                                    readBuffer[readBufferPosition++] = b;
-                                }
-                            }
-                        }
-                    }
-                    catch (IOException ex)
-                    {
-                        //stopWorker = true;
-                    }
-                }
-            }
-        });
-*/
-
-
-    /*class ConnectedThread extends Thread {
-        private final BluetoothSocket mmSocket;
-        private final InputStream mmInStream;
-        private final OutputStream mmOutStream;
-        private byte[] mmBuffer; // mmBuffer store for the stream
-
-        public ConnectedThread(BluetoothSocket socket) {
-            mmSocket = socket;
-            InputStream tmpIn = null;
-            OutputStream tmpOut = null;
-
-            // Get the input and output streams; using temp objects because
-            // member streams are final.
-            try {
-                tmpIn = socket.getInputStream();
-            } catch (IOException e) {
-                Log.e(TAG, "Error occurred when creating input stream", e);
-            }
-            try {
-                tmpOut = socket.getOutputStream();
-            } catch (IOException e) {
-                Log.e(TAG, "Error occurred when creating output stream", e);
-            }
-
-            mmInStream = tmpIn;
-            mmOutStream = tmpOut;
-        }
-
-        public void run() {
-            mmBuffer = new byte[1024];
-            int numBytes; // bytes returned from read()
-
-            // Keep listening to the InputStream until an exception occurs.
-            while (true) {
-                try {
-                    // Read from the InputStream.
-                    numBytes = mmInStream.read(mmBuffer);
-                    // Send the obtained bytes to the UI activity.
-                    Message readMsg = mHandler.obtainMessage(
-                            Addition1.MessageConstants.MESSAGE_READ, numBytes, -1,
-                            mmBuffer);
-                    readMsg.sendToTarget();
-
-                } catch (IOException e) {
-                    Log.d(TAG, "Input stream was disconnected", e);
-                    break;
-                }
-            }
-        }
-    }*/
-
 
 
 
@@ -300,42 +192,89 @@ public class Addition1 extends AppCompatActivity {
             // construct a string from the valid bytes in the buffer
             String writeMessage = new String(writeBuf, 0, msg.arg1);
             String seperateValues[] = writeMessage.split(",");
-            String pressure_1 = seperateValues[0];
+            //String pressure_1 = seperateValues[0];
             String pressure_2 = seperateValues[1];
-            String pressure_3 = seperateValues[2];
-            String pressure_4 = seperateValues[3];
-            String pressure_5 = seperateValues[4];
+            //String pressure_3 = seperateValues[2];
+            //String pressure_4 = seperateValues[3];
+            //String pressure_5 = seperateValues[4];
 
-            int pressure_1_int = Integer.parseInt(pressure_1);
+            /*int pressure_1_int = Integer.parseInt(pressure_1);
             int pressure_2_int = Integer.parseInt(pressure_2);
             int pressure_3_int = Integer.parseInt(pressure_3);
             int pressure_4_int = Integer.parseInt(pressure_4);
             int pressure_5_int = Integer.parseInt(pressure_5);
+    */  //TextView tv=(TextView) findViewById(R.id.textView31);
+           // EditText e1=(EditText) findViewById(R.id.editText3) ;
+            //e1.setText(pressure_2);
+            int x=0;
+            char p2;
+            int xx;
+            int value=0;
+            int tempEntered1;
+            int sunshineEntered1;
+            int humidityEntered1;
+            EditText temp = (EditText) findViewById(R.id.editText3);
+            EditText sunshine = (EditText) findViewById(R.id.editText5);
+            EditText humidity = (EditText) findViewById(R.id.editText6);
+            for(int i=0;i<pressure_2.length();i++){
+                p2=pressure_2.charAt(i);
+                xx=Character.getNumericValue(p2);
+                value=value*10+xx;
+                if(x==1){
+                tempEntered=value;
+                    tempEntered1=(int)tempEntered;
+                    temp.setText(String.valueOf(tempEntered1));
+                    value=0;
+                }
+                if(x==3){
+                    sunshineEntered=value;
+                    sunshineEntered1= (int)sunshineEntered;
+                    sunshine.setText(String.valueOf(sunshineEntered1));
+                    value=0;
+                }
+                if(x==5){
 
+                    humidityEntered=value;
+                    humidityEntered1=(int)humidityEntered;
+                    humidity.setText(String.valueOf(humidityEntered1));
+                    value=0;
+                }
+            x++;
+            }
+      //      try {
+               // mmInputStream.close();
+//                btSocket.close();
+        //    }catch(IOException e){
 
-        }
+          //  }
+            }
     };
 
 
 
-
+    float tempEntered;
+    float sunshineEntered;
+    float humidityEntered;
     public void findCrop(View view) {
         //getting the environmental variable values
+        EditText temp = (EditText) findViewById(R.id.editText3);
+        EditText sunshine = (EditText) findViewById(R.id.editText5);
+        EditText humidity = (EditText) findViewById(R.id.editText6);
         Spinner prioritycrop = (Spinner) findViewById(R.id.spinner3);
         String priority_name = String.valueOf(prioritycrop.getSelectedItem());
 
-        EditText temp = (EditText) findViewById(R.id.editText3);
-        float tempEntered = Float.parseFloat(temp.getText().toString());
+        // temp = (EditText) findViewById(R.id.editText3);
+         tempEntered = Float.parseFloat(temp.getText().toString());
 
 
         EditText ph = (EditText) findViewById(R.id.editText4);
         float phEntered = Float.parseFloat(ph.getText().toString());
 
-        EditText sunshine = (EditText) findViewById(R.id.editText5);
-        float sunshineEntered = Float.parseFloat(sunshine.getText().toString());
+       // EditText sunshine = (EditText) findViewById(R.id.editText5);
+         sunshineEntered = Float.parseFloat(sunshine.getText().toString());
 
-        EditText humidity = (EditText) findViewById(R.id.editText6);
-        float humidityEntered = Float.parseFloat(humidity.getText().toString());
+       // EditText humidity = (EditText) findViewById(R.id.editText6);
+         humidityEntered = Float.parseFloat(humidity.getText().toString());
 
         EditText nitrogen = (EditText) findViewById(R.id.editText7);
         float nitrogenentered = Float.parseFloat(nitrogen.getText().toString());
