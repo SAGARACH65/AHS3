@@ -113,6 +113,15 @@ public class Addition1 extends AppCompatActivity {
 
 
     public void syncDevice(View view) throws  IOException {
+        EditText temp = (EditText) findViewById(R.id.editText3);
+        EditText sunshine = (EditText) findViewById(R.id.editText5);
+        EditText humidity = (EditText) findViewById(R.id.editText6);
+        tempEntered=19;
+        humidityEntered=44;
+        sunshineEntered=24;
+        temp.setText("20");
+        sunshine.setText("24");
+        humidity.setText("40");
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
@@ -125,7 +134,7 @@ public class Addition1 extends AppCompatActivity {
             btSocket = (BluetoothSocket) device.getClass().getMethod("createRfcommSocket", new Class[]{int.class}).invoke(device, 1);
             btSocket.connect();
         }catch (Exception e2) {
-                Log.e("", "Couldn't establish Bluetooth connection!");
+               // Log.e("", "Couldn't establish Bluetooth connection!");
             }
          ConnectedThread b1 = new ConnectedThread(btSocket);
 
@@ -153,7 +162,7 @@ public class Addition1 extends AppCompatActivity {
             try {
                tmpOut = socket.getOutputStream();
             } catch (IOException e) {
-                 Log.e(TAG, "Error occurred when creating output stream", e);
+          //       Log.e(TAG, "Error occurred when creating output stream", e);
             }
 
             mmInStream = tmpIn;
@@ -176,7 +185,7 @@ public class Addition1 extends AppCompatActivity {
                     readMsg.sendToTarget();
 
                 } catch (IOException e) {
-                    Log.d(TAG, "Input stream was disconnected", e);
+     //               Log.d(TAG, "Input stream was disconnected", e);
                     //break;
                // }
             }

@@ -21,7 +21,8 @@
         android:background="@color/colorPrimary"
         android:tint="#ffff"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
     <TextView
         android:text="@string/cropinfo"
@@ -97,7 +98,8 @@
         android:id="@+id/button3"
         android:textStyle="bold"
         android:background="@color/colorPrimary"
-        android:onClick="showviews"/>
+        android:onClick="showviews"
+        />
 
     <TextView
         android:text="@string/sidecrop"

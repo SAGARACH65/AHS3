@@ -1,263 +1,263 @@
 <resources>
-    <string name="userinfo">Please Enter Your Information</string>
-    <string name="username">Name</string>
-    <string name="Error_Message">Please Select a Crop First</string>
-    <string name="ahs">Annual Harvest Suggestor</string>
+    <string name="userinfo">कृपया तपाईंको सूचना प्रविष्ट गर्नुहोस्</string>
+    <string name="username">नाम</string>
+    <string name="Error_Message">कृपया पहिले खेति चयन</string>
+    <string name="ahs">वार्षिक कटनी सुझाव</string>
     <string name="app_name">AHS</string>
-    <string name="Current_Crop">Current Crop:</string>
-    <string name="SideCrop">Side Crop:</string>
-    <string name="PlantedDate">Planted Date:</string>
-    <string name="Expected_Harvest_Date">Expected Harvest Date:</string>
-    <string name="main_page">Main Page</string>
-    <string name="button_info_field">Add New Field</string>
-    <string name="button_info_UI">User Info</string>
-    <string name="fertilizer">Fertilizer to Use</string>
-    <string name="planting">Planting Procedure</string>
-    <string name="Storage">Storage Suggestions</string>
-    <string name="fieldname">Field Name</string>
-    <string name="Rainques">Click if NO Irrigation is Available</string>
-    <string name="save">SAVE</string>
+    <string name="Current_Crop">वर्तमान खेति:</string>
+    <string name="SideCrop">साइड खेति:</string>
+    <string name="PlantedDate">लगाए तिथि:</string>
+    <string name="Expected_Harvest_Date">अपेक्षित कटनी तिथि:</string>
+    <string name="main_page">मुख्य पृष्ठ</string>
+    <string name="button_info_field">नयाँ क्षेत्र थप्न</string>
+    <string name="button_info_UI">प्रयोगकर्ता जानकारी</string>
+    <string name="fertilizer">प्रयोग गर्न मल</string>
+    <string name="planting">रोपण प्रक्रिया</string>
+    <string name="Storage">भण्डारण सुझाव</string>
+    <string name="fieldname">क्षेत्र नाम</string>
+    <string name="Rainques">क्लिक गर्नुहोस् कुनै सिंचाई उपलब्ध छ भने</string>
+    <string name="save">सुरक्षित गर्नुहोस्</string>
     <string name="userfieldname"></string>
-    <string name="title_activity_add_new_field">AddNewField</string>
-    <string name="region">Region</string>
-    <string name="NOF">No Of Fields</string>
-    <string name="Crops_prod">CROPS PLANTED</string>
-    <string name="Area">Area Of Land</string>
-    <string name="user_info">User Info</string>
-    <string name="field_adder">Add New Field</string>
-    <string name="DTH">Date Of Harvest:</string>
-    <string name="best_crop">Select Best Crop</string>
-    <string name="currentsituaation">Current Progress</string>
-    <string name="procedure">Crop Suggestion</string>
-    <string name="cropgrown">Crop:</string>
-    <string name="info">Please Enter The Following Information/ Sync with Device</string>
-    <string name="AVGT">Average Temperature(Celcius):</string>
-    <string name="AVGS">Total Hours of Sunshine:</string>
-    <string name="AVGR">Average Rainfall in mm:</string>
-    <string name="AVGPH">PH of Soil:</string>
-    <string name="AVGHU">Humidity in Percentage:</string>
-    <string name="AVGNI">Nitrogen Content in mm/kg:</string>
-    <string name="sync">SYNC</string>
-    <string name="chose">Chose Best Crop</string>
-    <string name="Croppriority">Set Priority Crop</string>
-    <string name="maincrop">Main Crop</string>
-    <string name="sidecrop1">Side Crop</string>
-    <string name="HintPH">PH</string>
-    <string name="HintSunshine">Sunshine</string>
-    <string name="HintRain">Rainfall</string>
-    <string name="HintTemp">Temperature</string>
-    <string name="HintHumidity">Humidity</string>
-    <string name="Hintnitro">Nitrogen</string>
-    <string name="CF">Confirm Crop</string>
-    <string name="nitrogen">Nitogen Information:</string>
-    <string name="cropinfo">Best Crops to plant:</string>
-    <string name="select">Select Crop</string>
-    <string name="confirm">CONFIRM</string>
-    <string name="sidecrop">Select side crop</string>
-    <string name="sideinfo">Select The Crop You Want To Plant Alongside </string>
-    <string name="confirmedcrop">Conf</string>
-    <string name="plantedmessage">Crop has already been Selected</string>
-    <string name="canclemessage">Click the button below to Cancel current crop and plant a new one</string>
-    <string name="cancle">CANCEL</string>
+    <string name="title_activity_add_new_field">नयाँ क्षेत्र थप्न</string>
+    <string name="region">क्षेत्र</string>
+    <string name="NOF">फिल्ड कुनै</string>
+    <string name="Crops_prod">बाली लगाए</string>
+    <string name="Area">क्षेत्र भूमि</string>
+    <string name="user_info">प्रयोगकर्ता जानकारी</string>
+    <string name="field_adder">नयाँ क्षेत्र थप्न</string>
+    <string name="DTH">मिति कटनी:</string>
+    <string name="best_crop">सर्वश्रेष्ठ खेति चयन</string>
+    <string name="currentsituaation">वर्तमान प्रगति</string>
+    <string name="procedure">बाली सुझाव</string>
+    <string name="cropgrown">बाली:</string>
+    <string name="info">कृपया उपकरण संग निम्न जानकारी / सिंक प्रविष्ट गर्नुहोस्</string>
+    <string name="AVGT">औसत तापमान (सेल्सियस):</string>
+    <string name="AVGS">घाम को कुल समय:</string>
+    <string name="AVGR">मिमी औसत वर्षा:</string>
+    <string name="AVGPH">माटो को PH:</string>
+    <string name="AVGHU">प्रतिशत मा चिस्यान:</string>
+    <string name="AVGNI">मिमी / किलो मा नाइट्रोजन सामग्री:</string>
+    <string name="sync">समिकरण</string>
+    <string name="chose">सर्वश्रेष्ठ खेति छनौट</string>
+    <string name="Croppriority">प्राथमिकता खेति सेट</string>
+    <string name="maincrop">मुख्य खेति</string>
+    <string name="sidecrop1">साइड खेति</string>
+    <string name="HintPH">पीएच</string>
+    <string name="HintSunshine">घाम</string>
+    <string name="HintRain">वर्षा</string>
+    <string name="HintTemp">तापमान</string>
+    <string name="HintHumidity">चिस्यान</string>
+    <string name="Hintnitro">नाइट्रोजन</string>
+    <string name="CF">खेति पुष्टि</string>
+    <string name="nitrogen">Nitogen सूचना:</string>
+    <string name="cropinfo">बोट सबै भन्दा राम्रो बाली:</string>
+    <string name="select">खेति चयन</string>
+    <string name="confirm">निश्चित</string>
+    <string name="sidecrop">पक्ष बाली चयन</string>
+    <string name="sideinfo">तपाईं सँगसँगै प्लान्ट गर्न चाहनुहुन्छ क्रप चयन</string>
+    <string name="confirmedcrop">conf</string>
+    <string name="plantedmessage">बाली पहिले नै चयन गरिएको छ</string>
+    <string name="canclemessage">वर्तमान बाली रद्द गर्न तलको बटनमा क्लिक गर्नुहोस् र एउटा नयाँ रोपेर</string>
+    <string name="cancle">रद्द</string>
     <string-array name="zones">
 
-        <item>Mechi</item>
-        <item>Koshi</item>
-        <item>Sagarmatha</item>
-        <item>Janakpur</item>
-        <item>Narayani</item>
-        <item>Bagmati</item>
-        <item>Lumbini</item>
-        <item>Gandaki</item>
-        <item>Dhawalagiri</item>
-        <item>Rapti</item>
-        <item>Karnali</item>
-        <item>Bheri</item>
-        <item>Seti</item>
-        <item>Mahakali</item>
+        <item>मेची</item>
+        <item>कोशी</item>
+        <item>सगरमाथा</item>
+        <item>जनकपुर</item>
+        <item>नारायणी</item>
+        <item>बागमती</item>
+        <item>लुम्बिनी</item>
+        <item>गण्डकी</item>
+        <item>धवलागिरी</item>
+        <item>राप्ती</item>
+        <item>कर्णाली</item>
+        <item>भेरी</item>
+        <item>सेती</item>
+        <item>महाकाली</item>
 
     </string-array>
     <string-array name="landMeasurementFigures">
-        <item>Bigha</item>
-        <item>Khatta</item>
-        <item>Ropani</item>
-        <item>Aana</item>
-        <item>Insignificant</item>
+        <item>बिघा</item>
+        <item>खट्टा</item>
+        <item>रोपनी</item>
+        <item>आना</item>
+        <item>नगण्य</item>
     </string-array>
 
 
     <string-array name="Crop_names">
-        <item>None</item>
-        <item>Broccoli</item>
-        <item>Cabbage</item>
-        <item>Carrots</item>
-        <item>Corn</item>
-        <item>Cauliflower</item>
-        <item>Cucumber</item>
-        <item>Garlic</item>
-        <item>Lettuce</item>
+        <item>कुनै पनि</item>
+        <item>ब्रोकोली</item>
+        <item>गोभी</item>
+        <item>गाजर</item>
+        <item>मकै</item>
+        <item>काउली</item>
+        <item>ककडी</item>
+        <item>लसुन</item>
+        <item>सलाद</item>
         <item>LimaBeans</item>
-        <item>Onions</item>
-        <item>Pea</item>
-        <item>Potatoes</item>
-        <item>Pumpkin</item>
+        <item>प्याज</item>
+        <item>मटर</item>
+        <item>आलु</item>
+        <item>फर्सी</item>
         <item>Raddish</item>
-        <item>Rice</item>
-        <item>SoyBean</item>
-        <item>Spinach</item>
-        <item>Strawberry</item>
-        <item>Turnip</item>
-        <item>Wheat</item>
+        <item>चामल</item>
+        <item>भटमास</item>
+        <item>पालुङ्गो</item>
+        <item>स्ट्रबेरी</item>
+        <item>सलगम</item>
+        <item>गहुँ</item>
     </string-array>
     <string-array name="turnip">
-        <item>NONE</item>
-        <item>Onions</item>
-        <item>Pea</item>
+        <item>कुनै पनि होइन</item>
+        <item>प्याज</item>
+        <item>मटर</item>
     </string-array>
     <string-array name="Cabbage">
-        <item>NONE</item>
-        <item>Carrots</item>
-        <item>Cucumber</item>
-        <item>Onions</item>
-        <item>Potatoes</item>
-        <item>Spinach</item>
+        <item>कुनै पनि होइन</item>
+        <item>गाजर</item>
+        <item>ककडी</item>
+        <item>प्याज</item>
+        <item>आलु</item>
+        <item>पालुङ्गो</item>
     </string-array>
 
     <string-array name="Cauliflower">
-        <item>NONE</item>
-        <item>Carrots</item>
-        <item>Cucumber</item>
-        <item>Onions</item>
-        <item>Potatoes</item>
+        <item>कुनै पनि होइन</item>
+        <item>गाजर</item>
+        <item>ककडी</item>
+        <item>प्याज</item>
+        <item>आलु</item>
     </string-array>
 
     <string-array name="Brocli">
-        <item>NONE</item>
-        <item>Carrots</item>
-        <item>Cucumber</item>
-        <item>Garlic</item>
-        <item>Potatoes</item>
+        <item>कुनै पनि होइन</item>
+        <item>गाजर</item>
+        <item>ककडी</item>
+        <item>लसुन</item>
+        <item>आलु</item>
     </string-array>
 
     <string-array name="Carrot">
-        <item>NONE</item>
-        <item>Cabbage</item>
-        <item>Onions</item>
-        <item>Pea</item>
+        <item>कुनै पनि होइन</item>
+        <item>गोभी</item>
+        <item>प्याज</item>
+        <item>मटर</item>
         <item>Raddish</item>
     </string-array>
 
     <string-array name="Lettuce">
-        <item>NONE</item>
-        <item>Carrots</item>
-        <item> Cucumber</item>
-        <item>Onions</item>
+        <item>कुनै पनि होइन</item>
+        <item>गाजर</item>
+        <item>  ककडी</item>
+        <item>प्याज</item>
     </string-array>
 
     <string-array name="Cucumber">
-        <item>NONE</item>
-        <item>Cabbage</item>
-        <item>Carrots</item>
-        <item>Corn</item>
+        <item>कुनै पनि होइन</item>
+        <item>गोभी</item>
+        <item>गाजर</item>
+        <item>मकै</item>
 
-        <item>Pea</item>
+        <item>मटर</item>
     </string-array>
 
     <string-array name="Garlic">
-        <item>NONE</item>
+        <item>कुनै पनि होइन</item>
     </string-array>
 
     <string-array name="Spinach">
-        <item>NONE</item>
-        <item>Cabbage</item>
-        <item>Corn</item>
+        <item>कुनै पनि होइन</item>
+        <item>गोभी</item>
+        <item>मकै</item>
         <item>Raddish</item>
-        <item>Pea</item>
-        <item>Strawberry</item>
+        <item>मटर</item>
+        <item>स्ट्रबेरी</item>
     </string-array>
 
     <string-array name="Raddish">
-        <item>NONE</item>
-        <item>Cabbage</item>
-        <item>Carrots</item>
-        <item>Corn</item>
-        <item> Cucumber</item>
-        <item>Pea</item>
+        <item>कुनै पनि होइन</item>
+        <item>गोभी</item>
+        <item>गाजर</item>
+        <item>मकै</item>
+        <item>  ककडी</item>
+        <item>मटर</item>
     </string-array>
 
 
     <string-array name="Onions">
-        <item>NONE</item>
-        <item>Broccoli</item>
-        <item>Cabbage</item>
-        <item>Carrots</item>
-        <item>Cauliflower</item>
-        <item>Potatoes</item>
-        <item>Spinach</item>
+        <item>कुनै पनि होइन</item>
+        <item>ब्रोकोली</item>
+        <item>गोभी</item>
+        <item>गाजर</item>
+        <item>काउली</item>
+        <item>आलु</item>
+        <item>पालुङ्गो</item>
     </string-array>
 
     <string-array name="Corn">
-        <item>NONE</item>
-        <item>Cabbage</item>
-        <item> Cucumber</item>
-        <item>Pea</item>
-        <item>Pumpkin</item>
+        <item>कुनै पनि होइन</item>
+        <item>गोभी</item>
+        <item>  ककडी</item>
+        <item>मटर</item>
+        <item>फर्सी</item>
     </string-array>
 
     <string-array name="Limabeans">
-        <item>NONE</item>
-        <item> Raddish</item>
+        <item>कुनै पनि होइन</item>
+        <item>  मुला</item>
     </string-array>
 
 
     <string-array name="Rice">
-        <item>NONE</item>
+        <item>कुनै पनि होइन</item>
     </string-array>
 
     <string-array name="Wheat">
-        <item>NONE</item>
+        <item>कुनै पनि होइन</item>
     </string-array>
 
     <string-array name="SoyBean">
-        <item>NONE</item>
-        <item>Potatoes</item>
-        <item>Cucumber</item>
-        <item>Corn</item>
-        <item>Strawberry</item>
+        <item>कुनै पनि होइन</item>
+        <item>आलु</item>
+        <item>ककडी</item>
+        <item>मकै</item>
+        <item>स्ट्रबेरी</item>
     </string-array>
 
     <string-array name="Strawberries">
-        <item>NONE</item>
-        <item>Onions</item>
-        <item>Lettuce</item>
-        <item>Pea</item>
+        <item>कुनै पनि होइन</item>
+        <item>प्याज</item>
+        <item>सलाद</item>
+        <item>मटर</item>
     </string-array>
 
     <string-array name="Peas">
-        <item>NONE</item>
-        <item>Carrots</item>
-        <item>Strawberry</item>
-        <item>Turnip</item>
-        <item>Cucumber</item>
+        <item>कुनै पनि होइन</item>
+        <item>गाजर</item>
+        <item>स्ट्रबेरी</item>
+        <item>सलगम</item>
+        <item>ककडी</item>
         <item>Raddish</item>
     </string-array>
 
     <string-array name="Potatoes">
-        <item>NONE</item>
-        <item>Cabbage</item>
-        <item>Corn</item>
-        <item>Pea</item>
+        <item>कुनै पनि होइन</item>
+        <item>गोभी</item>
+        <item>मकै</item>
+        <item>मटर</item>
     </string-array>
 
     <string-array name="Pumpkin">
-        <item>NONE</item>
-        <item>Corn</item>
-        <item>Onions</item>
+        <item>कुनै पनि होइन</item>
+        <item>मकै</item>
+        <item>प्याज</item>
         <item>Raddish</item>
-        <item>Pea</item>
-        <item>Strawberry</item>
+        <item>मटर</item>
+        <item>स्ट्रबेरी</item>
     </string-array>
 
 
-<string name="information">Information</string>
+    <string name="information">सूचना</string>
 </resources>
